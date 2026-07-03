@@ -4,85 +4,94 @@ import { FiPlus } from "react-icons/fi";
 
 const FAQS = [
   {
-    q: "How can Menu Engineering help increase my dine-in sales?",
-    a: "We analyze your best-selling and most profitable dishes, then restructure the layout, pricing, and descriptions so customers naturally gravitate toward high-margin items.",
+    q: "What happens if Shadow Eats decides to open an additional outlet in my location?",
+    a: "We coordinate closely with existing franchise partners to ensure fair territory planning and avoid unnecessary overlap that could impact your business.",
   },
   {
-    q: "Can my delivery menu be customized for local preferences?",
-    a: "Yes, we tailor item names, descriptions, and combos based on what performs best in your specific delivery zone and local taste preferences.",
+    q: "What will be the payment cycle?",
+    a: "Payouts follow a fixed monthly cycle, with clear settlement statements shared for every order processed through the platforms.",
   },
   {
-    q: "How can a redesigned dine-in menu help increase table turnover?",
-    a: "A clear, well-organized menu helps guests decide faster, reducing decision time and freeing up tables sooner without feeling rushed.",
+    q: "Who pays the Zomato/Swiggy commissions and discounts?",
+    a: "Platform commissions and discounts are factored into the pricing structure and managed as part of the overall franchise agreement.",
   },
   {
-    q: "Will the menu layout influence which dishes customers order more often?",
-    a: "Absolutely. Placement, sizing, and visual hierarchy guide the eye — we use this to spotlight the dishes you want to sell the most.",
+    q: "Does Shadow Eats charge any additional fees for ads or promotions?",
+    a: "Any promotional or ad spend is transparently communicated in advance, with no hidden charges added later.",
   },
   {
-    q: "Can the menu be adapted for different outlet sizes or themes?",
-    a: "Yes, every menu is custom-built to match your outlet's format, size, and overall brand theme, whether it's a small cloud kitchen or a full dine-in space.",
+    q: "What types of cuisine does Shadow Eats offer in its brands?",
+    a: "Our brand portfolio spans North Indian, Chinese, Mughlai, Biryani, and more, giving partners flexibility based on local demand.",
   },
   {
-    q: "Will you help with menu photography or visuals for dine-in menus?",
-    a: "Yes, we offer professional food photography and graphic design so your menu visuals match the quality of your food.",
+    q: "How can I become a Franchise Partner of Shadow Eats Brands?",
+    a: "You can apply through our franchise application process, after which our team reviews your location and profile before moving to onboarding.",
   },
   {
-    q: "Can you help with menu descriptions/images that improve online orders?",
-    a: "Yes, we write conversion-focused descriptions and pair them with optimized images specifically designed to boost clicks and orders on delivery apps.",
+    q: "Can I run my own brand along with Shadow Eats Brands?",
+    a: "Yes, many partners operate their own brand alongside a Shadow Eats virtual brand to maximize kitchen utilization.",
   },
   {
-    q: "How do you design menus that reduce cancellations or wrong orders?",
-    a: "We use clear naming, accurate descriptions, and structured categories so customers know exactly what they're ordering, reducing confusion and cancellations.",
+    q: "Is the franchise menu fixed, or can we customize it?",
+    a: "The core menu is standardized for brand consistency, but we do accommodate limited local customization where it makes sense.",
   },
   {
-    q: "How do you manage my cloud presence on delivery platforms?",
-    a: "We handle your listings, menu updates, pricing, and visibility optimization across Zomato and Swiggy to keep your cloud presence performing well.",
+    q: "What training support is provided by Shadow Eats?",
+    a: "We provide hands-on Chef Training Unit sessions covering recipes, plating, and kitchen workflow to ensure consistent quality.",
   },
   {
-    q: "Will the Restaurant Name Planner suggest names that are unique and trademarkable?",
-    a: "We research existing brands and suggest names that are distinctive and aligned with your concept, though final trademark clearance should be confirmed with a legal professional.",
+    q: "What is the duration of the franchise agreement?",
+    a: "Franchise agreements are typically structured for a fixed multi-year term, with renewal options discussed closer to expiry.",
   },
   {
-    q: "How do you ensure my logo and color palette reflect my brand?",
-    a: "We start by understanding your restaurant's story, cuisine, and audience, then design a logo and palette that visually communicates that identity consistently.",
+    q: "What are the franchise charges?",
+    a: "Franchise charges vary based on brand and setup requirements, and are shared in detail during the application and approval stage.",
   },
   {
-    q: "Will Menu Graphics Design make my menu more appealing to customers?",
-    a: "Yes, thoughtful layout, typography, and imagery make your menu more inviting and easier to navigate, which directly improves the ordering experience.",
+    q: "Is there a royalty in the franchise model?",
+    a: "Yes, a royalty is applicable as part of the ongoing brand usage and support provided throughout the partnership.",
+  },
+  {
+    q: "Why is royalty charged?",
+    a: "Royalty covers continued access to the brand, menu updates, marketing support, and platform management provided by Shadow Eats.",
+  },
+  {
+    q: "Does Shadow Eats handle sales growth and management support?",
+    a: "Yes, our team actively works on pricing strategy, visibility optimization, and performance tracking to help grow your sales.",
+  },
+  {
+    q: "Does Shadow Eats provide support whenever needed?",
+    a: "Yes, ongoing support is available throughout the partnership, from operational queries to platform-related assistance.",
   },
 ];
 
 function FaqItem({ item, isOpen, onToggle }) {
   return (
     <div
-      className="rounded-2xl overflow-hidden transition-all duration-300"
+      className="rounded-2xl overflow-hidden transition-all duration-300 h-fit"
       style={{
-        background: isOpen
-          ? "rgba(255,255,255,0.10)"
-          : "rgba(255,255,255,0.06)",
+        background: isOpen ? "rgba(255,255,255,0.1)" : "rgba(255,255,255,0.05)",
         backdropFilter: "blur(20px)",
         WebkitBackdropFilter: "blur(20px)",
         border: isOpen
-          ? "1px solid rgba(255,255,255,0.25)"
-          : "1px solid rgba(255,255,255,0.12)",
+          ? "1px solid rgba(255,255,255,0.2)"
+          : "1px solid rgba(255,255,255,0.1)",
         boxShadow: isOpen
-          ? "0 8px 32px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.15)"
-          : "0 4px 16px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.08)",
+          ? "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.12)"
+          : "0 4px 16px rgba(0,0,0,0.2)",
       }}
     >
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left cursor-pointer"
       >
-        <span className="text-white/90 text-sm sm:text-base font-medium leading-snug">
+        <span className="text-white text-sm sm:text-base font-medium leading-snug">
           {item.q}
         </span>
         <motion.span
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white"
-          style={{ background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.20)" }}
+          className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center border border-white/25 text-white"
         >
           <FiPlus size={16} />
         </motion.span>
@@ -98,7 +107,7 @@ function FaqItem({ item, isOpen, onToggle }) {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="px-5 sm:px-6 pb-5 sm:pb-6 text-white/50 text-sm sm:text-base leading-relaxed">
+            <p className="px-5 sm:px-6 pb-5 sm:pb-6 text-white/55 text-sm sm:text-base leading-relaxed">
               {item.a}
             </p>
           </motion.div>
@@ -112,8 +121,25 @@ export default function About4() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="relative py-20 sm:py-28 px-6 overflow-hidden" style={{ background: "#0a0a0a" }}>
-      <div className="relative max-w-3xl mx-auto flex flex-col items-center gap-10 sm:gap-12">
+    <section className="relative py-20 sm:py-28 px-6">
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src="brand_bg.png"
+          alt="background"
+          className="w-full h-full object-cover"
+        />
+
+        <div className="absolute inset-0 bg-black/70" />
+
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%)",
+          }}
+        />
+      </div>
+      <div className="relative max-w-5xl mx-auto flex flex-col items-center gap-12 sm:gap-16">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -124,14 +150,17 @@ export default function About4() {
           FAQs
         </motion.h1>
 
-        <div className="w-full flex flex-col gap-3 sm:gap-4">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 items-start">
           {FAQS.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.4, delay: Math.min(i * 0.04, 0.3) }}
+              transition={{
+                duration: 0.4,
+                delay: Math.min((i % 6) * 0.05, 0.3),
+              }}
             >
               <FaqItem
                 item={item}

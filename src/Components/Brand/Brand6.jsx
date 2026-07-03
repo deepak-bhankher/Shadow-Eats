@@ -68,11 +68,17 @@ const FAQS = [
 function FaqItem({ item, isOpen, onToggle }) {
   return (
     <div
-      className="rounded-2xl border border-white/12 overflow-hidden backdrop-blur-md transition-colors duration-300 h-fit"
+      className="rounded-2xl overflow-hidden transition-all duration-300 h-fit"
       style={{
-        background: isOpen
-          ? "rgba(255,255,255,0.08)"
-          : "rgba(255,255,255,0.04)",
+        background: isOpen ? "rgba(255,255,255,0.1)" : "rgba(255,255,255,0.05)",
+        backdropFilter: "blur(20px)",
+        WebkitBackdropFilter: "blur(20px)",
+        border: isOpen
+          ? "1px solid rgba(255,255,255,0.2)"
+          : "1px solid rgba(255,255,255,0.1)",
+        boxShadow: isOpen
+          ? "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.12)"
+          : "0 4px 16px rgba(0,0,0,0.2)",
       }}
     >
       <button
@@ -115,16 +121,33 @@ export default function Brand6() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="bg-black py-20 sm:py-28 px-6">
-      <div className="max-w-5xl mx-auto flex flex-col items-center gap-12 sm:gap-16">
+    <section className="relative py-20 sm:py-28 px-6">
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src="brand_bg.png"
+          alt="background"
+          className="w-full h-full object-cover"
+        />
+
+        <div className="absolute inset-0 bg-black/70" />
+
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%)",
+          }}
+        />
+      </div>
+      <div className="relative max-w-5xl mx-auto flex flex-col items-center gap-12 sm:gap-16">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold text-center"
+          className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white"
         >
-          Frequently Asked Questions
+          FAQs
         </motion.h1>
 
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 items-start">
