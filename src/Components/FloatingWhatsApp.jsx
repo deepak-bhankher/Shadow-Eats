@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
-// change these two values to your own number and default message
-const PHONE_NUMBER = "+91 7777024365"; // country code + number, no + or spaces
+const PHONE_NUMBER = "917777024365";
 const DEFAULT_MESSAGE = "Hello, is this Shadow Eats?";
 
 export default function FloatingWhatsApp() {
-  const href = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(
-    DEFAULT_MESSAGE
-  )}`;
+  const [hovered, setHovered] = useState(false);
+  const href = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`;
 
   return (
     <motion.a
@@ -16,26 +15,62 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      initial={{ opacity: 0, scale: 0.5, y: 40 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 1, type: "spring", stiffness: 200 }}
-      whileHover={{ scale: 1.08 }}
-      whileTap={{ scale: 0.94 }}
-      className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[999] w-14 h-14 sm:w-16 sm:h-16
-        rounded-full flex items-center justify-center cursor-pointer"
+      whileTap={{ scale: 0.93 }}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      className="fixed bottom-6 right-6 z-[999] flex items-center cursor-pointer"
       style={{
-        background: "#25D366",
-        boxShadow: "0 10px 30px rgba(37,211,102,0.45), inset 0 1px 0 rgba(255,255,255,0.25)",
+        borderRadius: 50,
+        background: "linear-gradient(135deg, #25D366 0%, #128C7E 100%)",
+        boxShadow: hovered
+          ? "0 16px 40px rgba(37,211,102,0.55), 0 2px 8px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.22)"
+          : "0 8px 28px rgba(37,211,102,0.38), inset 0 1px 0 rgba(255,255,255,0.18)",
+        transition: "box-shadow 0.3s ease",
+        padding: hovered ? "12px 22px 12px 16px" : "14px",
+        minWidth: hovered ? 160 : 52,
+        height: 52,
+        overflow: "hidden",
+        transitionProperty: "padding, min-width",
+        transitionDuration: "0.35s",
+        transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)",
       }}
     >
-      {/* pulsing ring */}
+      {/* dual pulsing rings */}
       <motion.span
-        className="absolute inset-0 rounded-full"
-        style={{ background: "#25D366" }}
-        animate={{ scale: [1, 1.6], opacity: [0.55, 0] }}
+        className="absolute inset-0"
+        style={{ borderRadius: 50, border: "2px solid rgba(37,211,102,0.6)" }}
+        animate={{ scale: [1, 1.55], opacity: [0.6, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
       />
-      <FaWhatsapp size={28} className="relative z-10 text-white" />
+      <motion.span
+        className="absolute inset-0"
+        style={{ borderRadius: 50, border: "2px solid rgba(37,211,102,0.4)" }}
+        animate={{ scale: [1, 1.9], opacity: [0.4, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeOut", delay: 0.4 }}
+      />
+
+      {/* icon with subtle bounce on hover */}
+      <motion.div
+        animate={hovered ? { rotate: [0, -12, 12, -6, 0] } : { rotate: 0 }}
+        transition={{ duration: 0.5 }}
+        className="relative z-10 flex-shrink-0"
+      >
+        <FaWhatsapp size={26} className="text-white drop-shadow" />
+      </motion.div>
+
+      {/* expanding text */}
+      <motion.span
+        initial={false}
+        animate={{ opacity: hovered ? 1 : 0, x: hovered ? 0 : -8 }}
+        transition={{ duration: 0.25, delay: hovered ? 0.1 : 0 }}
+        className="relative z-10 ml-2.5 text-white font-semibold text-sm whitespace-nowrap tracking-wide"
+        style={{ textShadow: "0 1px 4px rgba(0,0,0,0.18)" }}
+      >
+        Need Help?
+      </motion.span>
     </motion.a>
   );
 }
