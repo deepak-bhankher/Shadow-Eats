@@ -45,11 +45,12 @@ function ReelCard({ reel, index }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={toggle}
-      className="relative aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer group
+      className="relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer group
         border border-white/10
         shadow-[0_16px_48px_rgba(0,0,0,0.6)]
-        hover:shadow-[0_24px_64px_rgba(255,100,0,0.18),0_0_0_1.5px_rgba(255,255,255,0.08)]
-        transition-shadow duration-300"
+        hover:shadow-[0_0_0_1.5px_rgba(255,255,255,0.35),0_24px_64px_rgba(255,255,255,0.07)]
+        hover:border-white/30
+        transition-all duration-300"
     >
       {/* thumbnail shown until video plays */}
       {!playing && (
@@ -93,9 +94,9 @@ function ReelCard({ reel, index }) {
         <span
           className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
           style={{
-            background: "linear-gradient(135deg,#ff4500,#ff8c00)",
+            background: "rgba(255,255,255,0.12)",
             color: "#fff",
-            boxShadow: "0 2px 10px rgba(255,69,0,0.5)",
+            border: "1px solid rgba(255,255,255,0.2)",
           }}
         >
           Short
@@ -148,9 +149,9 @@ export default function Client4() {
           <span
             className="text-xs font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full"
             style={{
-              background: "linear-gradient(135deg,#ff4500,#ff8c00)",
+              background: "rgba(255,255,255,0.08)",
               color: "#fff",
-              boxShadow: "0 4px 16px rgba(255,69,0,0.35)",
+              border: "1px solid rgba(255,255,255,0.15)",
             }}
           >
             Partner Shorts
