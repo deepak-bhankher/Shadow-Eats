@@ -9,26 +9,15 @@ const fadeUp = (delay = 0) => ({
 
 const ROW1 = [
   { img: "client-logo1.png", alt: "Veer Ji" },
-  { img: "client-logo2.png", alt: "Baraamda" },
-  { img: "client-logo3.png", alt: "MOC" },
-  { img: "client-logo4.png", alt: "Chutney" },
-  { img: "client-logo5.png", alt: "Cunny's Kitchen" },
-  { img: "client-logo6.png", alt: "Dimsum Box" },
+  { img: "client-logo2.png", alt: "Chutney" },
+  { img: "client-logo3.png", alt: "Cunny's Kitchen" },
 ];
 
 const ROW2 = [
-  { img: "client-logo7.png", alt: "Hattoo Jadapau" },
-  { img: "client-logo8.png", alt: "Punjab Da Tadka" },
-  { img: "client-logo9.png", alt: "Sardar" },
-  { img: "client-logo10.png", alt: "The Paris" },
-  { img: "client-logo11.png", alt: "Pink Paprika" },
-  { img: "client-logo12.png", alt: "Peppy Pesto" },
-  { img: "client-logo13.png", alt: "Tandoori Hut" },
-  { img: "client-logo14.png", alt: "The Paneer Junction" },
-  { img: "client-logo15.png", alt: "Elite Bake" },
-  { img: "client-logo16.png", alt: "7th Heaven" },
-  { img: "client-logo17.png", alt: "Chai Sutta Bar" },
-  { img: "client-logo18.png", alt: "Chaiholic" },
+  { img: "client-logo4.png", alt: "Pink Paprika" },
+  { img: "client-logo5.png", alt: "The Paneer Junction" },
+  { img: "client-logo6.png", alt: "Elite Bake" },
+  { img: "client-logo7.png", alt: "Chaiholic" },
 ];
 
 function LogoCard({ img, alt }) {
@@ -36,15 +25,19 @@ function LogoCard({ img, alt }) {
     <motion.div
       whileHover={{ y: -5, scale: 1.05 }}
       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-      className="shrink-0 w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-white flex items-center justify-center p-3 sm:p-4
+      className="shrink-0 w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-2xl bg-white flex items-center justify-center p-4 sm:p-5
         border border-white/10 shadow-[0_10px_28px_rgba(0,0,0,0.4)] cursor-default"
     >
-      <img src={img} alt={alt} className="max-w-full max-h-full object-contain" />
+      <img
+        src={img}
+        alt={alt}
+        className="max-w-full max-h-full object-contain"
+      />
     </motion.div>
   );
 }
 
-function MarqueeRow({ items, direction = -1, duration = 28 }) {
+function MarqueeRow({ items, duration = 30 }) {
   const looped = [...items, ...items, ...items];
   return (
     <div className="relative">
@@ -52,8 +45,8 @@ function MarqueeRow({ items, direction = -1, duration = 28 }) {
       <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 z-10 bg-gradient-to-l from-black to-transparent" />
       <div className="overflow-hidden">
         <motion.div
-          className="flex items-center gap-4 sm:gap-5 w-max py-2"
-          animate={{ x: direction < 0 ? ["0%", "-33.333%"] : ["-33.333%", "0%"] }}
+          className="flex items-center gap-4 sm:gap-6 w-max py-2"
+          animate={{ x: ["-33.333%", "0%"] }}
           transition={{ duration, ease: "linear", repeat: Infinity }}
         >
           {looped.map((item, i) => (
@@ -69,7 +62,6 @@ export default function Client2() {
   return (
     <section className="bg-black py-20 sm:py-28 overflow-hidden">
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-14 sm:gap-16">
-
         {/* heading + stat */}
         <div className="flex flex-col items-center gap-4 sm:gap-5 text-center px-6">
           <motion.h1
@@ -94,16 +86,10 @@ export default function Client2() {
           </motion.p>
         </div>
 
-        {/* Row 1 — right to left */}
+        {/* Single row — left to right */}
         <motion.div {...fadeUp(0.25)} className="w-full">
-          <MarqueeRow items={ROW1} direction={-1} duration={20} />
+          <MarqueeRow items={[...ROW1, ...ROW2]} duration={40} />
         </motion.div>
-
-        {/* Row 2 — left to right */}
-        <motion.div {...fadeUp(0.3)} className="w-full">
-          <MarqueeRow items={ROW2} direction={1} duration={28} />
-        </motion.div>
-
       </div>
     </section>
   );

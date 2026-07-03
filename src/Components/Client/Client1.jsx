@@ -5,8 +5,8 @@ export default function Client1() {
     <section className="relative w-full min-h-screen flex items-center justify-center px-6 py-24 overflow-hidden">
       {/* background image */}
       <img
-        src="client1-bg.png"
-        alt=""
+        src="client.png"
+        alt="client"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
@@ -30,7 +30,10 @@ export default function Client1() {
         >
           Trusted by Restaurants
           <br />
-          Across India
+          <span style={{ fontFamily: "Cormorant Garamond, serif", fontWeight: 300, fontStyle: "italic", fontSize: "1.08em" }}>
+ Across India
+          </span>
+         
         </motion.h1>
 
         <motion.p

@@ -32,7 +32,17 @@ export default function About1() {
           {...fadeUp(0.1)}
           className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight"
         >
-          Build Menu That Drives Revenue
+          Build Menu That{" "}
+          <span
+            style={{
+              fontFamily: "Cormorant Garamond, serif",
+              fontWeight: 300,
+              fontStyle: "italic",
+              fontSize: "1.08em",
+            }}
+          >
+            Drives Revenue{" "}
+          </span>
         </motion.h1>
       </div>
     </section>

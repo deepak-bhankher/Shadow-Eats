@@ -21,8 +21,8 @@ const MARQUEE_IMAGES = [...CUISINE_IMAGES, ...CUISINE_IMAGES, ...CUISINE_IMAGES]
 const STATS_LEFT = [
   { label: "Country", value: "India " },
   { label: "States", value: "6" },
-  { label: "Cities", value: "30" },
-  { label: "Shadow Kitchens", value: "50+" },
+  { label: "Cities", value: "25" },
+  { label: "Shadow Kitchens", value: "30+" },
 ];
 
 function StatCard({ label, value, delay = 0, align = "left" }) {
@@ -138,7 +138,7 @@ export default function Brand3() {
             {/* right stats */}
             <div className="flex flex-col gap-3">
               <StatCard label="Category" value="Internet Restaurant" delay={0.3} align="right" />
-              <StatCard label="Brands" value="10+" delay={0.38} align="right" />
+              <StatCard label="Brands" value="5" delay={0.38} align="right" />
 
               {/* big number card */}
               <motion.div
