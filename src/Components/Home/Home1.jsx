@@ -557,20 +557,6 @@ export default function Home1() {
 
       <div className="relative z-10 md:px-10">
         <div className="md:max-w-5xl md:mx-auto px-6 text-center flex flex-col items-center">
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/30
-              shadow-[0_2px_14px_rgba(255,255,255,0.18)] text-sm font-medium text-white/90"
-            style={{
-              background: "rgba(255,255,255,0.10)",
-              backdropFilter: "blur(10px)",
-            }}
-          >
-            <FaStar className="text-white" size={13} />
-            4.9/5 Reviews on TrustPilot
-          </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 24 }}

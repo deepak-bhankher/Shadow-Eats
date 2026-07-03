@@ -8,6 +8,7 @@ import About from "./Pages/About";
 import Brand from "./Pages/Brand";
 import Client from "./Pages/Client";
 import Contact from "./Pages/Contact";
+import FloatingWhatsApp from "./Components/FloatingWhatsApp";
 
 
 function ScrollToTop() {
@@ -74,6 +75,7 @@ function AnimatedRoutes() {
           </PageWrapper>
         } />
       </Routes>
+
       
     </AnimatePresence>
   );
@@ -87,6 +89,7 @@ export default function App() {
         <Navbar />
         <AnimatedRoutes />
         <Footer />
+        <FloatingWhatsApp/>
       </div>
     </BrowserRouter>
   );
