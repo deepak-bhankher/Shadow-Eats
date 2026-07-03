@@ -266,7 +266,7 @@ export default function Home1() {
   return (
     <section
       data-theme="dark"
-      className="relative w-full sm:min-h-screen pt-24 sm:pt-32 md:pt-[140px] pb-16 sm:pb-24 overflow-hidden"
+      className="relative w-full min-h-screen flex flex-col justify-center pt-24 sm:pt-28 pb-16 sm:pb-24 overflow-hidden"
     >
       <img
         src="/bg1.png"
@@ -557,86 +557,62 @@ export default function Home1() {
 
       <div className="relative z-10 md:px-10">
         <div className="md:max-w-5xl md:mx-auto px-6 text-center flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/30
+              shadow-[0_2px_14px_rgba(255,255,255,0.18)] text-sm font-medium text-white/90"
+            style={{
+              background: "rgba(255,255,255,0.10)",
+              backdropFilter: "blur(10px)",
+            }}
+          >
+            <FaStar className="text-white" size={13} />
+            4.9/5 Reviews on TrustPilot
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="mt-5 sm:mt-7 font-semibold text-white
-              text-[30px] leading-[1.1] xs:text-[36px] sm:text-[52px] md:text-[62px] lg:text-[68px]"
+            className="mt-5 sm:mt-7 font-semibold text-white text-center
+              text-[26px] leading-[1.15] xs:text-[30px] sm:text-[48px] md:text-[62px] lg:text-[68px]"
           >
             Discover Delicious Food Near
-            <br />
-            <span className="inline-flex items-center align-middle">
+            <br className="hidden sm:block" />
+            {" "}
+            <span className="inline-flex flex-wrap items-center justify-center gap-x-2 align-middle">
               <span
-                className="italic font-light text-white mr-2"
-                style={{ fontFamily: "Instrument Serif , serif" }}
+                className="italic font-light text-white"
+                style={{ fontFamily: "Instrument Serif, serif" }}
               >
                 fresh flavors & gems
               </span>
               <motion.span
                 initial={{ opacity: 0, scale: 0.5, rotate: -15 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.5,
-                  type: "spring",
-                  stiffness: 200,
-                }}
+                transition={{ duration: 0.5, delay: 0.5, type: "spring", stiffness: 200 }}
                 whileHover={{ rotate: 8, scale: 1.15 }}
-                className="relative inline-flex items-center justify-center w-[36px] h-[36px] sm:w-[50px] sm:h-[50px] md:w-[62px] md:h-[62px]
-                  rounded-2xl overflow-hidden
-                  border border-white/40
+                className="relative inline-flex items-center justify-center w-[32px] h-[32px] sm:w-[50px] sm:h-[50px] md:w-[62px] md:h-[62px]
+                  rounded-2xl overflow-hidden border border-white/40
                   shadow-[0_0_28px_rgba(255,255,255,0.45),0_8px_24px_rgba(0,0,0,0.5)]"
                 style={{
-                  background:
-                    "linear-gradient(145deg, rgba(40,40,40,0.7) 0%, rgba(10,10,10,0.8) 100%)",
+                  background: "linear-gradient(145deg, rgba(40,40,40,0.7) 0%, rgba(10,10,10,0.8) 100%)",
                   backdropFilter: "blur(10px)",
                 }}
               >
-                {/* Soft white glow from bottom */}
-                <span
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "radial-gradient(ellipse at 50% 80%, rgba(255,255,255,0.45) 0%, transparent 65%)",
-                  }}
-                />
-                {/* Top glass sheen */}
-                <span
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.06) 45%, transparent 70%)",
-                  }}
-                />
-                {/* Top rim highlight */}
+                <span className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 80%, rgba(255,255,255,0.45) 0%, transparent 65%)" }} />
+                <span className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.06) 45%, transparent 70%)" }} />
                 <span className="absolute inset-0 rounded-2xl shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.4)]" />
-                {/* Bottom dark fade */}
-                <span
-                  className="absolute inset-x-0 bottom-0 h-2/5"
-                  style={{
-                    background:
-                      "linear-gradient(to top, rgba(0,0,0,0.4), transparent)",
-                  }}
-                />
-
-                <GiHamburger
-                  size={18}
-                  className="relative z-10 text-white sm:hidden"
-                />
-                <GiHamburger
-                  size={26}
-                  className="relative z-10 text-white hidden sm:block md:hidden"
-                />
-                <GiHamburger
-                  size={32}
-                  className="relative z-10 text-white hidden md:block"
-                />
+                <span className="absolute inset-x-0 bottom-0 h-2/5" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)" }} />
+                <GiHamburger size={16} className="relative z-10 text-white sm:hidden" />
+                <GiHamburger size={26} className="relative z-10 text-white hidden sm:block md:hidden" />
+                <GiHamburger size={32} className="relative z-10 text-white hidden md:block" />
               </motion.span>
-
               <span
-                className="font-light italic text-white ml-2"
-                style={{ fontFamily: "Instrument Serif , serif" }}
+                className="font-light italic text-white"
+                style={{ fontFamily: "Instrument Serif, serif" }}
               >
                 everyday
               </span>
