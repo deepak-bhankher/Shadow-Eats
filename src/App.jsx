@@ -7,6 +7,8 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Brand from "./Pages/Brand";
 import Client from "./Pages/Client";
+import Contact from "./Pages/Contact";
+
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -66,7 +68,13 @@ function AnimatedRoutes() {
             </PageWrapper>
           }
         />
+        <Route path="/contact" element={
+          <PageWrapper>
+            <Contact />
+          </PageWrapper>
+        } />
       </Routes>
+      
     </AnimatePresence>
   );
 }

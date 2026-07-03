@@ -84,7 +84,8 @@ function NumberBadge({ n, delay = 0 }) {
       {...fadeIn(delay)}
       className="inline-flex items-center justify-center w-9 h-9 rounded-lg text-sm font-bold text-white border border-white/20"
       style={{
-        background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%)",
+        background:
+          "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%)",
       }}
     >
       {n}
@@ -97,7 +98,11 @@ function ImageCard({ card, index }) {
   return (
     <motion.div
       {...fadeUp(base)}
-      whileHover={{ y: -6, boxShadow: "0 0 0 1px rgba(255,255,255,0.15), 0 20px 40px rgba(0,0,0,0.5)" }}
+      whileHover={{
+        y: -6,
+        boxShadow:
+          "0 0 0 1px rgba(255,255,255,0.15), 0 20px 40px rgba(0,0,0,0.5)",
+      }}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       className="flex flex-col gap-4 p-4 sm:p-5 rounded-2xl border border-white/10 bg-white/[0.03] transition-colors duration-300 hover:bg-white/[0.06]"
     >
@@ -151,7 +156,11 @@ export default function About2() {
         {/* Card 4: Restaurant Name Planner - horizontal */}
         <motion.div
           {...fadeUp(0.1)}
-          whileHover={{ y: -6, boxShadow: "0 0 0 1px rgba(255,255,255,0.15), 0 24px 48px rgba(0,0,0,0.5)" }}
+          whileHover={{
+            y: -6,
+            boxShadow:
+              "0 0 0 1px rgba(255,255,255,0.15), 0 24px 48px rgba(0,0,0,0.5)",
+          }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col lg:flex-row items-stretch gap-5 sm:gap-8 p-4 sm:p-6 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors duration-300"
         >
@@ -194,7 +203,11 @@ export default function About2() {
             <motion.div
               key={card.number}
               {...fadeUp(i * 0.12)}
-              whileHover={{ y: -6, boxShadow: "0 0 0 1px rgba(255,255,255,0.15), 0 20px 40px rgba(0,0,0,0.5)" }}
+              whileHover={{
+                y: -6,
+                boxShadow:
+                  "0 0 0 1px rgba(255,255,255,0.15), 0 20px 40px rgba(0,0,0,0.5)",
+              }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col gap-4 p-4 sm:p-5 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors duration-300"
             >
