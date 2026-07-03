@@ -39,7 +39,7 @@ export default function Contact1() {
   return (
     <div className="bg-black">
       {/* Hero */}
-      <section className="relative w-full h-[52vh] sm:h-[58vh] min-h-[360px] flex items-end justify-center px-6 pb-14 sm:pb-20 overflow-hidden">
+      <section className="relative w-full min-h-screen flex items-center justify-center px-6 py-24 overflow-hidden">
         <img src="contact1-bg.png" alt="" className="absolute inset-0 w-full h-full object-cover grayscale" />
         <div className="absolute inset-0 bg-black/60" />
         <div

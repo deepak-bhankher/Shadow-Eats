@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Client1() {
   return (
-    <section className="relative w-full min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center px-6 py-24 overflow-hidden">
+    <section className="relative w-full min-h-screen flex items-center justify-center px-6 py-24 overflow-hidden">
       {/* background image */}
       <img
         src="client1-bg.png"
