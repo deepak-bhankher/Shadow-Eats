@@ -6,11 +6,13 @@ import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Brand from "./Pages/Brand";
-
+import Client from "./Pages/Client";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return null;
 }
 
@@ -32,10 +34,38 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
-        <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
-        <Route path="/brands" element={<PageWrapper><Brand /></PageWrapper>} />
-    
+        <Route
+          path="/"
+          element={
+            <PageWrapper>
+              <Home />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <PageWrapper>
+              <About />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/brands"
+          element={
+            <PageWrapper>
+              <Brand />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/clients"
+          element={
+            <PageWrapper>
+              <Client />
+            </PageWrapper>
+          }
+        />
       </Routes>
     </AnimatePresence>
   );
