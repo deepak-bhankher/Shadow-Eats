@@ -146,7 +146,7 @@ export default function Navbar() {
                 transition={{ type: "spring", stiffness: 300, damping: 18 }}
                 className="flex items-center gap-2 cursor-pointer"
               >
-               <img src="shadowLogo.png" alt="png" className="w-52" />
+               <img src="shadowLogo.png" alt="Shadow Eats" className="h-8 sm:h-9 md:h-10 w-auto object-contain" />
               </motion.div>
             </Link>
 
