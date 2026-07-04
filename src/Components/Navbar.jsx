@@ -146,9 +146,7 @@ export default function Navbar() {
                 transition={{ type: "spring", stiffness: 300, damping: 18 }}
                 className="flex items-center gap-2 cursor-pointer"
               >
-                <span className="font-bold text-[18px] tracking-tight text-white">
-                  Shadow Eats
-                </span>
+               <img src="shadowLogo.png" alt="png" className="w-52" />
               </motion.div>
             </Link>
 

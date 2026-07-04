@@ -1,57 +1,68 @@
 import { motion } from "framer-motion";
 
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.3 },
   transition: { duration: 0.6, delay, ease: "easeOut" },
 });
 
-const image = [
-  { img: "home1.png" },
-  { img: "home2.png" },
-  { img: "home3.png" },
-  { img: "home4.png" },
-];
-
-// duplicate the array so the marquee loop is seamless
-const marqueeImages = [...image, ...image, ...image];
+const images = ["home1.png", "home2.png", "home3.png", "home4.png"];
+const marqueeImages = [...images, ...images, ...images];
 
 export default function Home4() {
   return (
-    <section className="bg-white text-black py-20 sm:py-28 overflow-hidden">
-      <div className="max-w-5xl mx-auto flex flex-col items-center text-center px-6">
-        {/* In the News */}
-        <motion.h1
-          {...fadeUp(0)}
-          className="text-3xl sm:text-4xl md:text-5xl font-semibold text-black"
-        >
-          In the News
-        </motion.h1>
+    <section className="relative bg-[#0a0a0a] text-white py-24 sm:py-32 overflow-hidden">
+
+      {/* subtle radial glow bg */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 40% at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 70%)",
+        }}
+      />
+
+      {/* ── Heading ── */}
+      <div className="relative max-w-4xl mx-auto flex flex-col items-center text-center px-6">
+        <motion.div {...fadeUp(0)} className="flex flex-col items-center gap-3">
+          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-white/30">
+            Press &amp; Media
+          </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white">
+            In the News
+          </h1>
+          <div className="w-8 h-px bg-white/15 mt-1" />
+        </motion.div>
       </div>
 
-      {/* Marquee */}
-      <motion.div {...fadeUp(0.1)} className="mt-12 w-full relative">
-        {/* edge fade masks */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-28 z-10 bg-gradient-to-r from-white to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-28 z-10 bg-gradient-to-l from-white to-transparent" />
+      {/* ── Marquee ── */}
+      <motion.div {...fadeUp(0.15)} className="relative mt-14 w-full">
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-40 z-10 bg-gradient-to-r from-[#0a0a0a] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-40 z-10 bg-gradient-to-l from-[#0a0a0a] to-transparent" />
 
         <div className="overflow-hidden">
           <motion.div
             className="flex items-center gap-4 sm:gap-6 w-max"
             animate={{ x: ["0%", "-33.333%"] }}
-            transition={{ duration: 18, ease: "linear", repeat: Infinity }}
+            transition={{ duration: 24, ease: "linear", repeat: Infinity }}
           >
-            {marqueeImages.map((item, i) => (
+            {marqueeImages.map((img, i) => (
               <div
                 key={i}
-                className="flex items-center justify-center p-6 sm:p-8 rounded-2xl border border-black/10
-                  bg-black/[0.03] hover:bg-black/[0.06] hover:border-black/20 transition-all duration-300 shrink-0"
+                className="shrink-0 flex items-center justify-center rounded-2xl"
+                style={{
+                  padding: "22px 32px",
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.09)",
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.07), 0 4px 24px rgba(0,0,0,0.5)",
+                }}
               >
                 <img
-                  src={item.img}
-                  alt={`News logo ${(i % image.length) + 1}`}
-                  className="max-h-16 sm:max-h-20 w-auto object-contain opacity-85"
+                  src={img}
+                  alt={`News ${(i % images.length) + 1}`}
+                  className="h-12 sm:h-16 w-auto object-contain"
+                  style={{ opacity: 0.9 }}
                 />
               </div>
             ))}
@@ -59,29 +70,35 @@ export default function Home4() {
         </div>
       </motion.div>
 
-      <div className="max-w-5xl mx-auto flex flex-col items-center text-center px-6">
-        {/* Let's Connect */}
+      {/* ── Let's Connect ── */}
+      <div className="relative max-w-4xl mx-auto flex flex-col items-center text-center px-6">
         <motion.div
-          {...fadeUp(0.25)}
-          className="mt-20 sm:mt-28 flex flex-col items-center gap-6"
+          {...fadeUp(0.2)}
+          className="mt-24 sm:mt-32 flex flex-col items-center gap-5"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-black">
+          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-white/30">
+            Get in Touch
+          </span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white">
             Let's Connect
           </h2>
 
-          <a
-            href="tel:7777024365"
-            className="group inline-flex items-center gap-3 px-7 sm:px-9 py-3.5 sm:py-4 rounded-full
-              border border-black/15 bg-black/[0.03] hover:bg-black hover:border-black
-              transition-all duration-300"
-          >
-            <span className="w-2 h-2 rounded-full bg-black group-hover:bg-white transition-colors duration-300" />
-            <span className="text-black group-hover:text-white text-lg sm:text-xl font-medium tracking-wide transition-colors duration-300">
-              +91 77770 24365
-            </span>
-          </a>
+          <motion.a
+              whileHover={{ y: -3, boxShadow: "0 20px 40px rgba(255,255,255,0.15), inset 0 1px 0 rgba(255,255,255,0.8)" }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="px-12 sm:px-16 py-3.5 sm:py-4 rounded-xl text-white hover:bg-white hover:text-black  font-semibold text-sm sm:text-base cursor-pointer "
+              style={{
+                fontFamily: "Inter, sans-serif",
+                boxShadow: "0 10px 28px rgba(255,255,255,0.1), inset 0 1px 0 rgba(255,255,255,0.9)",
+                letterSpacing: "0.04em",
+              }}
+            >
+            +91 77770 24365
+            </motion.a>
         </motion.div>
       </div>
+
     </section>
   );
 }
