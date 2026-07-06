@@ -296,11 +296,6 @@ export default function Home1() {
               strokeWidth="1"
             />
           </svg>
-
-          {/* Flow-only animation: icons curve points par continuously move honge.
-              Rotation ko ab fixed step me di hui style se lock rakha hai (as per feedback rotation nahi chahiye).
-              Opacity ab ek bada fadeZone aur ease curve use karta hai taaki fade smooth/gradual lage,
-              ek dum se gayab hone jaisa na lage. */}
           {(() => {
             const icons = [
               {
@@ -565,7 +560,7 @@ export default function Home1() {
             className="mt-5 sm:mt-7 font-semibold text-white text-center
               text-[26px] leading-[1.15] xs:text-[30px] sm:text-[48px] md:text-[62px] lg:text-[68px]"
           >
-            Discover Delicious Food Near
+           India’s #1 Restaurant Menu
             <br className="hidden sm:block" />
             {" "}
             <span className="inline-flex flex-wrap items-center justify-center gap-x-2 align-middle">
@@ -573,7 +568,7 @@ export default function Home1() {
                 className="italic font-light text-white"
                 style={{ fontFamily: "Instrument Serif, serif" }}
               >
-                fresh flavors & gems
+                 Engineering Delicious
               </span>
               <motion.span
                 initial={{ opacity: 0, scale: 0.5, rotate: -15 }}
@@ -600,7 +595,7 @@ export default function Home1() {
                 className="font-light italic text-white"
                 style={{ fontFamily: "Instrument Serif, serif" }}
               >
-                everyday
+                 Company
               </span>
             </span>
           </motion.h1>
@@ -611,7 +606,7 @@ export default function Home1() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mt-5 sm:mt-7 px-3 py-1 text-[13px] sm:text-[15px] md:text-base text-white/80 font-medium"
           >
-            Short-form video editing for Influencers, Creators and Brands
+          From brand naming to engineered menus and stunning dine-in & Logo designs—your complete Menu Solution.
           </motion.p>
 
           <motion.div
