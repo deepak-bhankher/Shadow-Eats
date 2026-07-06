@@ -119,7 +119,7 @@ export default function Contact1() {
               whileHover={{ y: -3, boxShadow: "0 20px 40px rgba(255,255,255,0.15), inset 0 1px 0 rgba(255,255,255,0.8)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="px-12 sm:px-16 py-3.5 sm:py-4 rounded-xl text-white hover:bg-white hover:text-black  font-semibold text-sm sm:text-base cursor-pointer "
+              className="px-12 sm:px-16 py-3.5 sm:py-4 rounded-xl text-white hover:bg-white hover:text-black transition-all duration-300  font-semibold text-sm sm:text-base cursor-pointer "
               style={{
                 fontFamily: "Inter, sans-serif",
                 boxShadow: "0 10px 28px rgba(255,255,255,0.1), inset 0 1px 0 rgba(255,255,255,0.9)",

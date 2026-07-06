@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MdArrowOutward } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 
+
 const NAV_LINKS = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
@@ -12,6 +13,7 @@ const NAV_LINKS = [
   { name: "Clients", path: "/clients" },
   { name: "Contact", path: "/contact" },
 ];
+
 
 function NavItem({ label, path }) {
   const { pathname } = useLocation();
@@ -61,7 +63,7 @@ function CtaButton() {
       onMouseLeave={() => setHovered(false)}
       whileHover={{ scale: 1.04, y: -1 }}
       whileTap={{ scale: 0.97 }}
-      className="relative px-5 py-2 flex gap-1.5 items-center rounded-lg text-sm font-semibold cursor-pointer overflow-hidden"
+      className="relative px-5 py-2 flex gap-1.5 items-center rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 overflow-hidden"
       style={{
         background: hovered
           ? "rgba(255,255,255,0.10)"
@@ -74,7 +76,7 @@ function CtaButton() {
         transition: "background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
       }}
     >
-      <Link to="/contact" className="relative z-10 flex items-center gap-1.5">
+      <Link to="/contact" className="relative  z-10 flex  items-center gap-1.5">
         Explore Restaurants
         <div className="relative w-[17px] h-[17px] overflow-hidden">
           <motion.span
@@ -97,6 +99,7 @@ function CtaButton() {
   );
 }
 
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -106,6 +109,7 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
 
   return (
     <>
@@ -128,8 +132,7 @@ export default function Navbar() {
               ? "0 12px 40px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.16), inset 0 -1px 0 rgba(255,255,255,0.03)"
               : "0 6px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.12)",
           }}
-        >
-          {/* top sheen highlight */}
+        > 
           <div
             className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-2xl"
             style={{

@@ -43,7 +43,8 @@ function StepCard({ step, index }) {
       {...fadeUp(index * 0.1)}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
-      className="relative flex flex-col items-center justify-center gap-8  py-5 rounded-3xl border border-white/10 group hover:border-white/25 transition-all duration-300"
+      className="relative flex flex-col items-center justify-center gap-8
+        py-5 rounded-3xl border border-white/10 group hover:border-white/25 transition-all duration-300"
       style={{ background: "rgba(255,255,255,0.06)" }}
     >
       <h3 className="text-white font-medium text-xl sm:text-2xl text-center leading-snug">
