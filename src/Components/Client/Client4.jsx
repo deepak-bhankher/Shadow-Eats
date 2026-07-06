@@ -10,17 +10,18 @@ const fadeUp = (delay = 0) => ({
 });
 
 // Single premium HD thumbnail used across all cards for a consistent, polished look
-const SHARED_THUMB = "/thum2.png";
+const SHARED_THUMB =
+  "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=800&q=90&auto=format&fit=crop";
 
 const REELS = [
-  { thumb: SHARED_THUMB, video: "video1.mp4" },
-  { thumb: SHARED_THUMB, video: "video4.mp4" },
-  { thumb: SHARED_THUMB, video: "video3.mp4" },
-  {  thumb: SHARED_THUMB, video:"video2.mp4" },
-  { thumb: SHARED_THUMB, video: "video5.mp4" },
-  { thumb: SHARED_THUMB, video: "video6.mp4" },
-  { thumb: SHARED_THUMB, video: "video7.mp4" },
-  {  thumb: SHARED_THUMB, video: "video8.mp4" },
+  { name: "Namaste Thali", thumb: SHARED_THUMB, video: "video1.mp4" },
+  { name: "Chaap Chariot", thumb: SHARED_THUMB, video: "video2.mp4" },
+  { name: "Wokford", thumb: SHARED_THUMB, video: "video3.mp4" },
+  { name: "Truly Ghee", thumb: SHARED_THUMB, video: "video4.mp4" },
+  { name: "Paratha Ekdum", thumb: SHARED_THUMB, video: "video5.mp4" },
+  { name: "Veer Ji", thumb: SHARED_THUMB, video: "video6.mp4" },
+  { name: "Baraamda", thumb: SHARED_THUMB, video: "video7.mp4" },
+  { name: "Dimsum Box", thumb: SHARED_THUMB, video: "video8.mp4" },
 ];
 
 function ReelCard({ reel, index }) {
@@ -122,9 +123,9 @@ function ReelCard({ reel, index }) {
         </span>
       </div>
 
-      {/* play / pause button */}
+      {/* play / pause button — only shown when paused, hidden while playing */}
       <AnimatePresence>
-        {(hovered || !playing) && (
+        {!playing && (
           <motion.div
             key="ctrl"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -142,11 +143,7 @@ function ReelCard({ reel, index }) {
                   "inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 32px rgba(0,0,0,0.4)",
               }}
             >
-              {playing ? (
-                <FiPause size={20} className="text-white" />
-              ) : (
-                <FiPlay size={20} className="text-white translate-x-[2px]" />
-              )}
+              <FiPlay size={20} className="text-white translate-x-[2px]" />
             </div>
           </motion.div>
         )}
