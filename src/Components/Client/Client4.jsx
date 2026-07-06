@@ -9,15 +9,18 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.6, delay, ease: "easeOut" },
 });
 
+// Single premium HD thumbnail used across all cards for a consistent, polished look
+const SHARED_THUMB = "/thum2.png";
+
 const REELS = [
-  { name: "Namaste Thali", thumb: "reel1.png", video: "reel1.mp4" },
-  { name: "Chaap Chariot", thumb: "reel2.png", video: "reel2.mp4" },
-  { name: "Wokford", thumb: "reel3.png", video: "reel3.mp4" },
-  { name: "Truly Ghee", thumb: "reel4.png", video: "reel4.mp4" },
-  { name: "Paratha Ekdum", thumb: "reel5.png", video: "reel5.mp4" },
-  { name: "Veer Ji", thumb: "reel6.png", video: "reel6.mp4" },
-  { name: "Baraamda", thumb: "reel7.png", video: "reel7.mp4" },
-  { name: "Dimsum Box", thumb: "reel8.png", video: "reel8.mp4" },
+  { thumb: SHARED_THUMB, video: "video1.mp4" },
+  { thumb: SHARED_THUMB, video: "video4.mp4" },
+  { thumb: SHARED_THUMB, video: "video3.mp4" },
+  {  thumb: SHARED_THUMB, video:"video2.mp4" },
+  { thumb: SHARED_THUMB, video: "video5.mp4" },
+  { thumb: SHARED_THUMB, video: "video6.mp4" },
+  { thumb: SHARED_THUMB, video: "video7.mp4" },
+  {  thumb: SHARED_THUMB, video: "video8.mp4" },
 ];
 
 function ReelCard({ reel, index }) {
@@ -37,13 +40,30 @@ function ReelCard({ reel, index }) {
     }
   };
 
+  const handleMouseEnter = () => {
+    setHovered(true);
+    if (videoRef.current && !playing) {
+      videoRef.current.play();
+      setPlaying(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+    if (videoRef.current && playing) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+      setPlaying(false);
+    }
+  };
+
   return (
     <motion.div
       {...fadeUp(index * 0.06)}
       whileHover={{ y: -6, scale: 1.02 }}
       transition={{ duration: 0.3 }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       onClick={toggle}
       className="relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer group
         border border-white/10
@@ -67,7 +87,6 @@ function ReelCard({ reel, index }) {
         src={reel.video}
         loop
         playsInline
-        muted
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
           playing ? "opacity-100" : "opacity-0"
         }`}
@@ -160,7 +179,7 @@ export default function Client4() {
             Reels From Our Restaurant Partners
           </h1>
           <p className="text-white/40 text-sm sm:text-base text-center max-w-md">
-            Tap any card to play a short from our partner restaurants
+            Hover any card to play a short from our partner restaurants
           </p>
         </motion.div>
 
