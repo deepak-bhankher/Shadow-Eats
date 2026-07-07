@@ -15,7 +15,6 @@ const TESTIMONIALS = [
     quote:
       "Shadow Eats completely redefined our online menu. Their team knows exactly how to optimise listings, pricing, and photos for Zomato and Swiggy. After their revamp, our visibility and order conversion shot up instantly.",
     name: "Abhishek Roy",
-    role: "Owner, Namaste Thali",
     avatar: "client-avatar1.png",
     stars: 5,
   },
@@ -23,7 +22,6 @@ const TESTIMONIALS = [
     quote:
       "The way Shadow Eats analyses menu data on Zomato and Swiggy is next level. They don't just design — they engineer menus that perform. Our sales increased simply because the online flow became smarter and more customer-friendly.",
     name: "Manish Khattar",
-    role: "Founder, Chaap Chariot",
     avatar: "client-avatar2.png",
     stars: 4,
   },
@@ -31,7 +29,6 @@ const TESTIMONIALS = [
     quote:
       "Working with Shadow Eats felt like having an in-house growth team. Every recommendation was backed by real data, and the results showed up in our order numbers within weeks.",
     name: "Priya Nair",
-    role: "Co-founder, Wokford",
     avatar: "client-avatar3.png",
     stars: 5,
   },
@@ -39,7 +36,6 @@ const TESTIMONIALS = [
     quote:
       "Our dine-in menu looks premium now and our delivery menu actually converts. Shadow Eats handled both worlds without compromising either one.",
     name: "Rohit Malhotra",
-    role: "Director, Truly Ghee",
     avatar: "client-avatar4.png",
     stars: 4,
   },
@@ -59,7 +55,9 @@ function TestimonialCard({ item }) {
       className="relative flex-shrink-0 w-[300px] sm:w-[360px] h-[320px] sm:h-[360px] flex flex-col justify-between gap-6 p-6 sm:p-8 rounded-3xl cursor-pointer"
       style={{
         background: "linear-gradient(145deg, #1a1a1a 0%, #111 100%)",
-        border: hovered ? "1px solid rgba(255,255,255,0.35)" : "1px solid rgba(255,255,255,0.07)",
+        border: hovered
+          ? "1px solid rgba(255,255,255,0.35)"
+          : "1px solid rgba(255,255,255,0.07)",
         boxShadow: hovered
           ? "0 0 0 1px rgba(255,255,255,0.12), 0 24px 70px rgba(255,255,255,0.08), 0 8px 32px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.1)"
           : "0 24px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05)",
@@ -98,12 +96,10 @@ function TestimonialCard({ item }) {
             border: "2px solid rgba(255,255,255,0.2)",
           }}
         />
-        <div className="flex flex-col">
-          <span className="text-white font-semibold text-sm sm:text-[15px]">
-            {item.name}
-          </span>
-          <span className="text-white/35 text-xs">{item.role}</span>
-        </div>
+
+        <span className="text-white font-semibold text-sm sm:text-[15px]">
+          {item.name}
+        </span>
       </div>
     </motion.div>
   );
