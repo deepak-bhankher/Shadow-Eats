@@ -47,24 +47,61 @@ export default function Contact1() {
           style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%)" }}
         />
 
-        <div className="relative max-w-2xl mx-auto flex flex-col items-center text-center gap-4 sm:gap-5">
+        <div className="relative max-w-2xl mx-auto flex flex-col items-center text-center gap-5 sm:gap-6">
+          <motion.span
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-white/70 text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-white/15"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%)",
+              backdropFilter: "blur(6px)",
+            }}
+          >
+            Get In Touch
+          </motion.span>
+
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="text-white font-semibold leading-tight text-[26px] xs:text-[30px] sm:text-[38px] md:text-[46px] tracking-tight"
           >
             Let's make something
             <br />
-            <span style={{ fontFamily: "Cormorant Garamond, serif", fontWeight: 300, fontStyle: "italic", fontSize: "1.08em" }}>
+            <span
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 400,
+                fontStyle: "italic",
+                fontSize: "1.15em",
+                background:
+                  "linear-gradient(120deg, #f3d98b 0%, #e8b95f 45%, #f3d98b 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
               awesome together
             </span>
           </motion.h1>
 
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.6, delay: 0.28, ease: "easeOut" }}
+            className="w-16 h-px"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, rgba(232,185,95,0.7), transparent)",
+            }}
+          />
+
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.22, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             className="text-white/55 text-sm sm:text-base leading-relaxed max-w-md"
             style={{ fontFamily: "Inter, sans-serif", fontWeight: 300, letterSpacing: "0.02em" }}
           >

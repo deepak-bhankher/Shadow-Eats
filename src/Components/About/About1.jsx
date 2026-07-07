@@ -18,32 +18,51 @@ export default function About1() {
       />
 
       {/* dark overlay for text readability */}
-      <div className="absolute inset-0 " />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black" />
 
-      <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center gap-4">
-        <motion.p
+      <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center gap-6">
+        <motion.span
           {...fadeUp(0)}
-          className="text-white/60 text-sm sm:text-base tracking-wide"
+          className="text-white/70 text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-white/15"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)",
+          }}
         >
-          Smart Solutions. Stunning Design. Stronger Sales.
-        </motion.p>
+          Smart Solutions · Stunning Design · Stronger Sales
+        </motion.span>
 
         <motion.h1
           {...fadeUp(0.1)}
-          className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight"
+          className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.1] tracking-tight"
         >
-          Build Menu That{" "}
+          Build Menus That
+          <br />
           <span
             style={{
-              fontFamily: "Cormorant Garamond, serif",
-              fontWeight: 300,
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 400,
               fontStyle: "italic",
-              fontSize: "1.08em",
+              fontSize: "1.15em",
+              background:
+                "linear-gradient(120deg, #f3d98b 0%, #e8b95f 45%, #f3d98b 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
             }}
           >
-            Drives Revenue{" "}
+            Drive Revenue
           </span>
         </motion.h1>
+
+        <motion.div
+          {...fadeUp(0.25)}
+          className="w-16 h-px mt-2"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, rgba(232,185,95,0.7), transparent)",
+          }}
+        />
       </div>
     </section>
   );

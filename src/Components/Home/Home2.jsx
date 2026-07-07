@@ -37,26 +37,49 @@ function fadeUp(delay = 0) {
     transition: { duration: 0.55, delay, ease: "easeOut" },
   };
 }
+
 function StepCard({ step, index }) {
+  const Icon = step.icon;
   return (
     <motion.div
       {...fadeUp(index * 0.1)}
-      whileHover={{ y: -4 }}
+      whileHover={{ y: -6 }}
       transition={{ duration: 0.3 }}
-      className="relative flex flex-col items-center justify-center gap-6 w-96 mx-auto
-        py-5 px-4 rounded-3xl border border-white/10 group hover:border-white/25 transition-all duration-300"
-      style={{ background: "rgba(255,255,255,0.06)" }}
+      className="relative flex flex-col h-full gap-5 p-6 sm:p-7 rounded-2xl border border-white/10
+        bg-white/[0.04] hover:bg-white/[0.07] hover:border-white/25
+        transition-all duration-300"
     >
-      <h3 className="text-white font-medium text-base sm:text-xl text-center leading-snug">
+      {/* top row: icon + number */}
+      <div className="flex items-center justify-between">
+        <div
+          className="w-11 h-11 rounded-xl flex items-center justify-center border border-white/15"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.03) 100%)",
+          }}
+        >
+          <Icon size={20} className="text-white" />
+        </div>
+        <span className="text-white/25 text-xs font-semibold tracking-widest">
+          {step.number}
+        </span>
+      </div>
+
+      <h3 className="text-white font-semibold text-lg sm:text-xl leading-snug">
         {step.title}
       </h3>
 
+      <p className="text-white/45 text-sm leading-relaxed flex-1">
+        {step.desc}
+      </p>
+
       <motion.button
-        whileHover={{ scale: 1.04 }}
+        whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        className="px-6 py-2 rounded-lg bg-white cursor-pointer hover:border border-white hover:bg-black hover:text-white text-black font-semibold text-sm
-          shadow-[0_6px_18px_rgba(0,0,0,0.50)] hover:shadow-[0_8px_22px_rgba(255,255,255,0.15)]
-          transition-shadow duration-300"
+        className="mt-1 self-start px-5 py-2 rounded-lg bg-white text-black font-semibold text-sm
+          border border-white hover:bg-black hover:text-white
+          shadow-[0_6px_18px_rgba(0,0,0,0.45)] hover:shadow-[0_8px_22px_rgba(255,255,255,0.12)]
+          transition-all duration-300 cursor-pointer"
       >
         Explore
       </motion.button>
@@ -81,7 +104,7 @@ export default function Home2() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
           {STEPS.map((step, i) => (
             <StepCard key={i} step={step} index={i} />
           ))}
