@@ -16,10 +16,6 @@ const SLIDES = [
   { img: "brands1.png", alt: "Slide 2" },
   { img: "brands2.png", alt: "Slide 2" },
   { img: "brands3.png", alt: "Slide 2" },
-
-  
-
-
 ];
 
 const BRANDS = [
@@ -42,7 +38,7 @@ function Slider() {
   return (
     <motion.div
       {...fadeUp(0)}
-      className="relative w-full max-w-5xl mx-auto rounded-3xl overflow-hidden border border-white/10
+      className="relative w-full max-w-4xl mx-auto rounded-3xl overflow-hidden border border-white/10
         shadow-[0_24px_70px_rgba(0,0,0,0.6)] aspect-[16/9] sm:aspect-[21/9]"
     >
       <AnimatePresence initial={false} custom={direction} mode="wait">

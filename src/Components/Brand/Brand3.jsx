@@ -155,12 +155,22 @@ export default function Brand3() {
                 >
                   Outlets
                 </span>
-                <span
-                  className="text-white font-bold text-5xl sm:text-6xl leading-none tracking-tight"
-                  style={{ fontFamily: "Inter, sans-serif" }}
-                >
-                  250<span className="text-[#D6ff01]">+</span>
-                </span>
+               <span
+  className="text-white font-bold text-5xl sm:text-6xl leading-none tracking-tight"
+  style={{ fontFamily: "Inter, sans-serif" }}
+>
+  250
+  <span
+    style={{
+      background: "linear-gradient(120deg, #f3d98b 0%, #e8b95f 45%, #f3d98b 100%)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      backgroundClip: "text",
+    }}
+  >
+    +
+  </span>
+</span>
               </motion.div>
             </div>
 
