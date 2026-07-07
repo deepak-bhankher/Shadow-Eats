@@ -9,17 +9,15 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.6, delay, ease: "easeOut" },
 });
 
-// Single premium HD thumbnail used across all cards for a consistent, polished look
-const SHARED_THUMB =
-  "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=800&q=90&auto=format&fit=crop";
+const SHARED_THUMB = "";
 
 const REELS = [
-  { thumb: SHARED_THUMB, video: "video1.mp4" },
-  { thumb: SHARED_THUMB, video: "video2.mp4" },
-  { thumb: SHARED_THUMB, video: "video3.mp4" },
-  { thumb: SHARED_THUMB, video: "video4.mp4" },
-  { thumb: SHARED_THUMB, video: "video5.mp4" },
-  { thumb: SHARED_THUMB, video: "video6.mp4" },
+  {video: "video1.mp4" },
+  {video: "video2.mp4" },
+  {video: "video3.mp4" },
+  {video: "video4.mp4" },
+  {video: "video5.mp4" },
+  {video: "video6.mp4" },
 ];
 
 function ReelCard({ reel, index }) {
