@@ -95,7 +95,7 @@ export default function Footer() {
                     <span className="w-9 h-9 shrink-0 rounded-full border border-white/20 flex items-center justify-center">
                       <Icon size={16} className="text-white" />
                     </span>
-                    <span className="text-white/70 text-sm sm:text-base leading-snug">
+                    <span className="text-gray-400 hover:text-white transition-all cursor-pointer duration-300 text-sm sm:text-base leading-snug">
                       {c.text}
                     </span>
                   </>
