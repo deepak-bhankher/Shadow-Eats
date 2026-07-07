@@ -14,14 +14,14 @@ const SHARED_THUMB =
   "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=800&q=90&auto=format&fit=crop";
 
 const REELS = [
-  { name: "Namaste Thali", thumb: SHARED_THUMB, video: "video1.mp4" },
-  { name: "Chaap Chariot", thumb: SHARED_THUMB, video: "video2.mp4" },
-  { name: "Wokford", thumb: SHARED_THUMB, video: "video3.mp4" },
-  { name: "Truly Ghee", thumb: SHARED_THUMB, video: "video4.mp4" },
-  { name: "Paratha Ekdum", thumb: SHARED_THUMB, video: "video5.mp4" },
-  { name: "Veer Ji", thumb: SHARED_THUMB, video: "video6.mp4" },
-  { name: "Baraamda", thumb: SHARED_THUMB, video: "video7.mp4" },
-  { name: "Dimsum Box", thumb: SHARED_THUMB, video: "video8.mp4" },
+  { thumb: SHARED_THUMB, video: "video1.mp4" },
+  { thumb: SHARED_THUMB, video: "video2.mp4" },
+  { thumb: SHARED_THUMB, video: "video3.mp4" },
+  { thumb: SHARED_THUMB, video: "video4.mp4" },
+  { thumb: SHARED_THUMB, video: "video5.mp4" },
+  { thumb: SHARED_THUMB, video: "video6.mp4" },
+  { thumb: SHARED_THUMB, video: "video7.mp4" },
+  { thumb: SHARED_THUMB, video: "video8.mp4" },
 ];
 
 function ReelCard({ reel, index }) {

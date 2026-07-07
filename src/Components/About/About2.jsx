@@ -37,7 +37,7 @@ const IMAGE_CARDS_TOP = [
 
 const NAME_PLANNER = {
   number: "4",
-  img: "",
+  img: "About4.png",
   title: "Restaurant Name Planner",
   desc: "Shadow Eats create memorable, brand aligned restaurant names that resonate with your audience. Every name is designed to reflect your concept and attract diners.",
 };
@@ -57,7 +57,7 @@ const TEXT_CARDS = [
   },
   {
     number: "7",
-    img: "",
+    img: "About8.png",
     title: "F&B Photoshoot",
     desc: "We set up professional photoshoots for Zomato and Swiggy brand pages, delivering high-quality images and videos optimized for online ordering platforms. Currently available across North India.",
   },

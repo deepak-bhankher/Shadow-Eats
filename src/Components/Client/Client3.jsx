@@ -16,7 +16,7 @@ const TESTIMONIALS = [
       "Shadow Eats completely redefined our online menu. Their team knows exactly how to optimise listings, pricing, and photos for Zomato and Swiggy. After their revamp, our visibility and order conversion shot up instantly.",
     name: "Abhishek Roy",
     role: "Owner, Namaste Thali",
-    avatar: "video1.mp4",
+    avatar: "client-avatar1.png",
     stars: 5,
   },
   {

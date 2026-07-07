@@ -62,8 +62,6 @@ function GlassIconCard({
   opacity = 1,
   rotate = 0,
 }) {
-  // Brand logo colors kept as-is (they represent real brand identities).
-  // Only the glow/accent tone around each glass card is now monochrome.
   const toneMap = {
     swiggy: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
     zomato: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },

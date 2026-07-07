@@ -18,6 +18,12 @@ const ROW2 = [
   { img: "client-logo5.png", alt: "The Paneer Junction" },
   { img: "client-logo6.png", alt: "Elite Bake" },
   { img: "client-logo7.png", alt: "Chaiholic" },
+  { img: "client-logo8.png", alt: "Dimsum Box " },
+  { img: "client-logo9.png", alt: "Moti Mehal" },
+  { img: "client-logo10.png", alt: "Baraamda" },
+  { img: "client-logo11.png", alt: "XoXo" },
+  { img: "client-logo12.png", alt: "The Paneer Junction" },
+  { img: "client-logo13.png", alt: "Chai Suta Bar" },
 ];
 
 function LogoCard({ img, alt }) {
@@ -75,7 +81,7 @@ export default function Client2() {
             {...fadeUp(0.1)}
             className="text-white font-bold text-6xl sm:text-7xl md:text-8xl tracking-tight"
           >
-            1000+
+            2000+
           </motion.span>
 
           <motion.p

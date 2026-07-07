@@ -12,8 +12,7 @@ const fadeUp = (delay = 0) => ({
 // add as many slide images as you like here
 const SLIDES = [
   { img: "brand1.png", alt: "Chaap Chariot dish" },
-  { img: "", alt: "Slide 2" },
-  { img: "", alt: "Slide 3" },
+  { img: "About4.png", alt: "Slide 2" },
 ];
 
 const BRANDS = [
