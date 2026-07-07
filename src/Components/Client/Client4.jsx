@@ -15,7 +15,7 @@ const SHARED_THUMB =
 
 const REELS = [
   { thumb: SHARED_THUMB, video: "video1.mp4" },
-  // { thumb: SHARED_THUMB, video: "video2.mp4" },
+  { thumb: SHARED_THUMB, video: "video2.mp4" },
   { thumb: SHARED_THUMB, video: "video3.mp4" },
   { thumb: SHARED_THUMB, video: "video4.mp4" },
   { thumb: SHARED_THUMB, video: "video5.mp4" },
