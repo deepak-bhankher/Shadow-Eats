@@ -9,15 +9,13 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.6, delay, ease: "easeOut" },
 });
 
-const SHARED_THUMB = "";
-
 const REELS = [
-  {video: "video1.mp4" },
-  {video: "video2.mp4" },
-  {video: "video3.mp4" },
-  {video: "video4.mp4" },
-  {video: "video5.mp4" },
-  {video: "video6.mp4" },
+  { name: "Restaurant 1", video: "video1.mp4", thumb: "client1.png" },
+  { name: "Restaurant 2", video: "video2.mp4", thumb: "client2.png" },
+  { name: "Restaurant 3", video: "video3.mp4", thumb: "client3.png" },
+  { name: "Restaurant 4", video: "video4.mp4", thumb: "client4.png" },
+  { name: "Restaurant 5", video: "video5.mp4", thumb: "client5.png" },
+  { name: "Restaurant 6", video: "video6.mp4", thumb: "client6.png" },
 ];
 
 function ReelCard({ reel, index }) {
