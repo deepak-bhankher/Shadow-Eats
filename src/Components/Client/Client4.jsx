@@ -20,8 +20,6 @@ const REELS = [
   { thumb: SHARED_THUMB, video: "video4.mp4" },
   { thumb: SHARED_THUMB, video: "video5.mp4" },
   { thumb: SHARED_THUMB, video: "video6.mp4" },
-  { thumb: SHARED_THUMB, video: "video7.mp4" },
-  { thumb: SHARED_THUMB, video: "video8.mp4" },
 ];
 
 function ReelCard({ reel, index }) {
@@ -66,7 +64,7 @@ function ReelCard({ reel, index }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={toggle}
-      className="relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer group
+      className="relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] w-full max-w-[300px] mx-auto rounded-2xl overflow-hidden cursor-pointer group
         border border-white/10
         shadow-[0_16px_48px_rgba(0,0,0,0.6)]
         hover:shadow-[0_0_0_1.5px_rgba(255,255,255,0.35),0_24px_64px_rgba(255,255,255,0.07)]
@@ -78,7 +76,7 @@ function ReelCard({ reel, index }) {
         <img
           src={reel.thumb}
           alt={reel.name}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
       )}
 
@@ -88,7 +86,7 @@ function ReelCard({ reel, index }) {
         src={reel.video}
         loop
         playsInline
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-300 ${
           playing ? "opacity-100" : "opacity-0"
         }`}
         onEnded={() => setPlaying(false)}
@@ -180,7 +178,7 @@ export default function Client4() {
           </p>
         </motion.div>
 
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-5">
+        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5">
           {REELS.map((reel, i) => (
             <ReelCard key={reel.name} reel={reel} index={i} />
           ))}
