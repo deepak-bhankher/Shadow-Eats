@@ -65,8 +65,10 @@ function GlassIconCard({
     swiggy: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
     zomato: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
     mcdonalds: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
+    subway: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
     kfc: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
     dominos: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
+    startbucks: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
     burgerking: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
     pizzahut: { accent: "#E5E5  E5", accent2: "rgba(255,255,255,0.35)" },
     dunkin: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
@@ -94,45 +96,30 @@ function GlassIconCard({
         className="absolute inset-0 rounded-2xl"
         style={{
           background:
-            "linear-gradient(180deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.08) 55%, rgba(255,255,255,0.03) 100%)",
+            "linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.90) 55%, rgba(255,255,255,0.85) 100%)",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
-          border: "1px solid rgba(255,255,255,0.22)",
+          border: "1px solid rgba(255,255,255,0.6)",
           boxShadow:
             depth > 0
-              ? `0 18px 40px rgba(0,0,0,0.55), 0 0 28px ${toneStyles.accent2}`
-              : `0 12px 26px rgba(0,0,0,0.42), 0 0 18px ${toneStyles.accent2}`,
+              ? `0 18px 40px rgba(0,0,0,0.35), 0 0 24px ${toneStyles.accent2}`
+              : `0 12px 26px rgba(0,0,0,0.25), 0 0 16px ${toneStyles.accent2}`,
         }}
       />
 
       <div
         className="absolute inset-x-0 top-0 h-1/2 rounded-t-2xl"
         style={{
-          background: `radial-gradient(60% 90% at 50% -10%, ${toneStyles.accent2} 0%, rgba(255,255,255,0.15) 40%, transparent 70%)`,
+          background:
+            "radial-gradient(60% 90% at 50% -10%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 40%, transparent 70%)",
           borderTopLeftRadius: 12,
           borderTopRightRadius: 12,
-        }}
-      />
-
-      <div
-        className="absolute inset-0 rounded-2xl"
-        style={{
-          background:
-            "linear-gradient(135deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.10) 45%, transparent 70%)",
-          mixBlendMode: "screen",
         }}
       />
 
       <div className="relative z-10 w-1/2 h-1/2 flex items-center justify-center">
         {icon}
       </div>
-
-      <div
-        className="absolute inset-x-0 bottom-0 h-1/2 rounded-b-2xl"
-        style={{
-          background: "linear-gradient(to top, rgba(0,0,0,0.42), transparent)",
-        }}
-      />
     </motion.div>
   );
 }
