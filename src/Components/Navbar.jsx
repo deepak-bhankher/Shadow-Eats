@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import { RxCross1 } from "react-icons/rx";
 import { CiMenuFries } from "react-icons/ci";
 import { motion, AnimatePresence } from "framer-motion";
-import { MdArrowOutward } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
-
 
 const NAV_LINKS = [
   { name: "Home", path: "/" },
@@ -14,6 +13,8 @@ const NAV_LINKS = [
   { name: "Contact", path: "/contact" },
 ];
 
+const PHONE_NUMBER = "+91 95548 24365";
+const PHONE_HREF = "tel:+919554824365";
 
 function NavItem({ label, path }) {
   const { pathname } = useLocation();
@@ -39,7 +40,8 @@ function NavItem({ label, path }) {
               background:
                 "linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.05) 100%)",
               border: "1px solid rgba(255,255,255,0.16)",
-              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.25), 0 4px 12px rgba(0,0,0,0.25)",
+              boxShadow:
+                "inset 0 1px 0 rgba(255,255,255,0.25), 0 4px 12px rgba(0,0,0,0.25)",
             }}
           />
         )}
@@ -58,12 +60,13 @@ function NavItem({ label, path }) {
 function CtaButton() {
   const [hovered, setHovered] = useState(false);
   return (
-    <motion.button
+    <motion.a
+      href={PHONE_HREF}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       whileHover={{ scale: 1.04, y: -1 }}
       whileTap={{ scale: 0.97 }}
-      className="relative px-5 py-2 flex gap-1.5 items-center rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 overflow-hidden"
+      className="relative px-5 py-2 flex gap-2 items-center rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 overflow-hidden"
       style={{
         background: hovered
           ? "rgba(255,255,255,0.10)"
@@ -73,32 +76,25 @@ function CtaButton() {
         boxShadow: hovered
           ? "inset 0 1px 0 rgba(255,255,255,0.2)"
           : "0 6px 18px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.6)",
-        transition: "background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
+        transition:
+          "background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
       }}
     >
-      <Link to="/contact" className="relative  z-10 flex  items-center gap-1.5">
-        Explore Restaurants
-        <div className="relative w-[17px] h-[17px] overflow-hidden">
-          <motion.span
-            className="absolute inset-0 flex items-center justify-center"
-            animate={hovered ? { x: 17, y: -17, opacity: 0 } : { x: 0, y: 0, opacity: 1 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
-          >
-            <MdArrowOutward size={17} />
-          </motion.span>
-          <motion.span
-            className="absolute inset-0 flex items-center justify-center"
-            animate={hovered ? { x: 0, y: 0, opacity: 1 } : { x: -17, y: 17, opacity: 0 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
-          >
-            <MdArrowOutward size={17} />
-          </motion.span>
-        </div>
-      </Link>
-    </motion.button>
+      <span className="relative z-10 flex items-center gap-2">
+        <motion.span
+          animate={
+            hovered ? { rotate: [0, -15, 15, -10, 10, 0] } : { rotate: 0 }
+          }
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="flex items-center justify-center"
+        >
+          <FaPhoneAlt size={13} />
+        </motion.span>
+        {PHONE_NUMBER}
+      </span>
+    </motion.a>
   );
 }
-
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -110,7 +106,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-
   return (
     <>
       <motion.nav
@@ -121,7 +116,9 @@ export default function Navbar() {
       >
         <div
           className={`relative max-w-5xl mx-auto rounded-2xl px-5 overflow-hidden transition-all duration-500 ${
-            scrolled ? "backdrop-blur-2xl backdrop-saturate-150" : "backdrop-blur-lg backdrop-saturate-125"
+            scrolled
+              ? "backdrop-blur-2xl backdrop-saturate-150"
+              : "backdrop-blur-lg backdrop-saturate-125"
           }`}
           style={{
             background: scrolled
@@ -132,7 +129,7 @@ export default function Navbar() {
               ? "0 12px 40px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.16), inset 0 -1px 0 rgba(255,255,255,0.03)"
               : "0 6px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.12)",
           }}
-        > 
+        >
           <div
             className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-2xl"
             style={{
@@ -149,7 +146,11 @@ export default function Navbar() {
                 transition={{ type: "spring", stiffness: 300, damping: 18 }}
                 className="flex items-center gap-2 cursor-pointer"
               >
-               <img src="shadowLogo.png" alt="Shadow Eats" className="h-8 sm:h-9 md:h-10 w-auto object-contain" />
+                <img
+                  src="shadowLogo.png"
+                  alt="Shadow Eats"
+                  className="h-8 sm:h-9 md:h-10 w-auto object-contain"
+                />
               </motion.div>
             </Link>
 
@@ -262,18 +263,20 @@ export default function Navbar() {
                   transition={{ delay: 0.25, duration: 0.22 }}
                   className="list-none mt-1 pt-3 border-t border-white/10"
                 >
-                  <Link to="/contact" onClick={() => setOpen(false)}>
+                  <a href={PHONE_HREF} onClick={() => setOpen(false)}>
                     <button
                       className="w-full flex justify-center items-center gap-2 py-3 px-6 rounded-xl cursor-pointer text-sm font-semibold text-black transition-all duration-300"
                       style={{
-                        background: "linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%)",
-                        boxShadow: "0 6px 18px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.6)",
+                        background:
+                          "linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%)",
+                        boxShadow:
+                          "0 6px 18px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.6)",
                       }}
                     >
-                      Explore Restaurants
-                      <MdArrowOutward size={16} />
+                      <FaPhoneAlt size={13} />
+                      {PHONE_NUMBER}
                     </button>
-                  </Link>
+                  </a>
                 </motion.li>
               </ul>
             </div>
