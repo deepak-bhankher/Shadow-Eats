@@ -52,7 +52,7 @@ function TestimonialCard({ item }) {
       transition={{ duration: 0.3, ease: "easeOut" }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative flex-shrink-0 w-[300px] sm:w-[360px] h-[320px] sm:h-[360px] flex flex-col justify-between gap-6 p-6 sm:p-8 rounded-3xl cursor-pointer"
+      className="relative flex-shrink-0 w-[300px] sm:w-[360px] min-h-[360px] sm:min-h-[380px] flex flex-col justify-between gap-6 p-6 sm:p-8 rounded-3xl cursor-pointer overflow-hidden"
       style={{
         background: "linear-gradient(145deg, #1a1a1a 0%, #111 100%)",
         border: hovered
@@ -74,7 +74,7 @@ function TestimonialCard({ item }) {
         ))}
       </div>
 
-      <p className="text-white/70 text-sm sm:text-[15px] leading-relaxed flex-1">
+      <p className="text-white/70 text-sm sm:text-[15px] leading-relaxed flex-1 line-clamp-5">
         {item.quote}
       </p>
 
@@ -91,7 +91,7 @@ function TestimonialCard({ item }) {
         <img
           src={item.avatar}
           alt={item.name}
-          className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover"
+          className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover flex-shrink-0"
           style={{
             border: "2px solid rgba(255,255,255,0.2)",
           }}
@@ -147,7 +147,7 @@ export default function Client3() {
             />
 
             <motion.div
-              className="flex gap-5 sm:gap-6 w-max"
+              className="flex gap-5 sm:gap-6 w-max items-stretch"
               animate={{ x: ["0%", "-50%"] }}
               transition={{
                 duration: 28,
