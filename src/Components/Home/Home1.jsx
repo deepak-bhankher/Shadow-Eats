@@ -1,10 +1,8 @@
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaStar } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { GiHamburger } from "react-icons/gi";
 
 function useResponsiveIconSize() {
   const [iconSize, setIconSize] = useState(44);
@@ -70,7 +68,7 @@ function GlassIconCard({
     kfc: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
     dominos: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
     burgerking: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
-    pizzahut: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
+    pizzahut: { accent: "#E5E5  E5", accent2: "rgba(255,255,255,0.35)" },
     dunkin: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
   };
   const toneStyles = toneMap[tone] ?? {
@@ -125,7 +123,9 @@ function GlassIconCard({
         }}
       />
 
-      <div className="relative z-10">{icon}</div>
+      <div className="relative z-10 w-1/2 h-1/2 flex items-center justify-center">
+        {icon}
+      </div>
 
       <div
         className="absolute inset-x-0 bottom-0 h-1/2 rounded-b-2xl"
@@ -224,31 +224,6 @@ function GlassButtonBase({
   );
 }
 
-function PrimaryGlassCta({ children, withArrow = false }) {
-  return (
-    <GlassButtonBase
-      withArrow={withArrow}
-      background="linear-gradient(135deg, #4a4a4a 0%, #0a0a0a 100%)"
-      hoverBackground="linear-gradient(135deg, #1a1a1a 0%, #303030 60%, #000000 100%)"
-      glowOpacity={0.75}
-    >
-      {children}
-    </GlassButtonBase>
-  );
-}
-
-function SecondaryGlassCta({ children, withArrow = false }) {
-  return (
-    <GlassButtonBase
-      withArrow={withArrow}
-      background="rgba(255,255,255,0.08)"
-      glowOpacity={0.3}
-    >
-      {children}
-    </GlassButtonBase>
-  );
-}
-
 export default function Home1() {
   const iconSize = useResponsiveIconSize();
 
@@ -257,11 +232,6 @@ export default function Home1() {
       data-theme="dark"
       className="relative w-full min-h-screen flex flex-col justify-center pt-24 sm:pt-28 pb-16 sm:pb-24 overflow-hidden"
     >
-      <img
-        src="/bg1.png"
-        alt=""
-        className="absolute inset-0 w-full h-full object-cover"
-      />
       <div
         className="absolute inset-0"
         style={{
@@ -281,7 +251,7 @@ export default function Home1() {
             <path
               d="M20 20 C 20 500, 280 620, 550 620 C 820 620, 1080 500, 1080 20"
               stroke="#FFFFFF55"
-              strokeWidth="1"
+              strokeWidth="2"
             />
           </svg>
           {(() => {
@@ -289,202 +259,103 @@ export default function Home1() {
               {
                 tone: "swiggy",
                 icon: (
-                  <svg width="20" height="20" viewBox="0 0 64 64" fill="none">
-                    <ellipse cx="32" cy="38" rx="18" ry="20" fill="#FC8019" />
-                    <ellipse cx="32" cy="36" rx="11" ry="12" fill="#fff" />
-                    <path
-                      d="M26 32 Q32 26 38 32 Q32 38 26 32Z"
-                      fill="#FC8019"
-                    />
-                    <circle cx="44" cy="18" r="7" fill="#FC8019" />
-                    <circle cx="44" cy="18" r="4" fill="#fff" />
-                  </svg>
+                  <img
+                    src="Swiggy.png"
+                    alt="Swiggy"
+                    className="w-full h-full object-contain"
+                    draggable={false}
+                  />
                 ),
               },
               {
                 tone: "zomato",
                 icon: (
-                  <svg width="20" height="20" viewBox="0 0 64 64" fill="none">
-                    <rect
-                      x="8"
-                      y="20"
-                      width="48"
-                      height="10"
-                      rx="5"
-                      fill="#E23744"
-                    />
-                    <rect
-                      x="8"
-                      y="34"
-                      width="48"
-                      height="10"
-                      rx="5"
-                      fill="#E23744"
-                    />
-                    <text
-                      x="32"
-                      y="58"
-                      textAnchor="middle"
-                      fontSize="11"
-                      fontWeight="bold"
-                      fill="#E23744"
-                      fontFamily="Arial"
-                    >
-                      zomato
-                    </text>
-                  </svg>
+                  <img
+                    src="zomato.png"
+                    alt="Zomato"
+                    className="w-full h-full object-contain"
+                    draggable={false}
+                  />
                 ),
               },
               {
                 tone: "mcdonalds",
                 icon: (
-                  <svg width="20" height="20" viewBox="0 0 64 64" fill="none">
-                    <path
-                      d="M10 52 L10 20 Q10 8 20 8 Q28 8 28 20 L28 52"
-                      stroke="#FFC72C"
-                      strokeWidth="8"
-                      strokeLinecap="round"
-                      fill="none"
-                    />
-                    <path
-                      d="M54 52 L54 20 Q54 8 44 8 Q36 8 36 20 L36 52"
-                      stroke="#FFC72C"
-                      strokeWidth="8"
-                      strokeLinecap="round"
-                      fill="none"
-                    />
-                  </svg>
+                  <img
+                    src="mcd2.png"
+                    alt="McDonald's"
+                    className="w-full h-full object-contain"
+                    draggable={false}
+                  />
+                ),
+              },
+               {
+                tone: "subway",
+                icon: (
+                  <img
+                    src="Subway.png"
+                    alt="subway's"
+                    className="w-full h-full object-contain"
+                    draggable={false}
+                  />
                 ),
               },
               {
                 tone: "kfc",
                 icon: (
-                  <svg width="20" height="20" viewBox="0 0 64 64" fill="none">
-                    <circle cx="32" cy="32" r="26" fill="#F40027" />
-                    <text
-                      x="32"
-                      y="38"
-                      textAnchor="middle"
-                      fontSize="18"
-                      fontWeight="900"
-                      fill="#fff"
-                      fontFamily="Arial"
-                    >
-                      KFC
-                    </text>
-                  </svg>
+                  <img
+                    src="kfc.png"
+                    alt="KFC"
+                    className="w-full h-full object-contain"
+                    draggable={false}
+                  />
                 ),
               },
               {
                 tone: "dominos",
                 icon: (
-                  <svg width="20" height="20" viewBox="0 0 64 64" fill="none">
-                    <rect
-                      x="6"
-                      y="12"
-                      width="52"
-                      height="40"
-                      rx="8"
-                      fill="#006491"
-                    />
-                    <rect
-                      x="6"
-                      y="12"
-                      width="26"
-                      height="40"
-                      rx="8"
-                      fill="#E31837"
-                    />
-                    <circle cx="19" cy="24" r="4" fill="#fff" />
-                    <circle cx="19" cy="40" r="4" fill="#fff" />
-                    <circle cx="45" cy="32" r="4" fill="#fff" />
-                  </svg>
+                  <img
+                    src="dominos.png"
+                    alt="Domino's"
+                    className="w-full h-full object-contain"
+                    draggable={false}
+                  />
                 ),
-              },
+              },  
+              {
+                tone: "startbucks",
+                icon: (
+                  <img
+                    src="starbucks.png"
+                    alt="starbucks's"
+                    className="w-full h-full object-contain"
+                    draggable={false}
+                  />
+                ),
+              },  
               {
                 tone: "burgerking",
                 icon: (
-                  <svg width="20" height="20" viewBox="0 0 64 64" fill="none">
-                    <rect
-                      x="10"
-                      y="14"
-                      width="44"
-                      height="8"
-                      rx="4"
-                      fill="#F5A623"
-                    />
-                    <rect
-                      x="10"
-                      y="28"
-                      width="44"
-                      height="8"
-                      rx="4"
-                      fill="#C8102E"
-                    />
-                    <rect
-                      x="10"
-                      y="42"
-                      width="44"
-                      height="8"
-                      rx="4"
-                      fill="#F5A623"
-                    />
-                    <ellipse cx="32" cy="14" rx="22" ry="6" fill="#C8A97A" />
-                    <ellipse cx="32" cy="52" rx="22" ry="6" fill="#C8A97A" />
-                  </svg>
+                  <img
+                    src="burger.png"
+                    alt="Burger King"
+                    className="w-full h-full object-contain"
+                    draggable={false}
+                  />
                 ),
               },
               {
                 tone: "pizzahut",
                 icon: (
-                  <svg width="20" height="20" viewBox="0 0 64 64" fill="none">
-                    <path
-                      d="M32 6 L58 28 Q58 32 32 32 Q6 32 6 28 Z"
-                      fill="#EE3124"
-                    />
-                    <rect
-                      x="14"
-                      y="32"
-                      width="36"
-                      height="22"
-                      rx="4"
-                      fill="#EE3124"
-                    />
-                    <rect
-                      x="20"
-                      y="36"
-                      width="24"
-                      height="6"
-                      rx="3"
-                      fill="#fff"
-                    />
-                  </svg>
+                  <img
+                    src="pizza-hut.png"
+                    alt="Pizza Hut"
+                    className="w-full h-full object-contain"
+                    draggable={false}
+                  />
                 ),
               },
-              {
-                tone: "dunkin",
-                icon: (
-                  <svg width="20" height="20" viewBox="0 0 64 64" fill="none">
-                    <circle
-                      cx="32"
-                      cy="30"
-                      r="20"
-                      fill="#FF671F"
-                      stroke="#fff"
-                      strokeWidth="3"
-                    />
-                    <circle cx="32" cy="30" r="9" fill="#fff" />
-                    <rect
-                      x="10"
-                      y="44"
-                      width="44"
-                      height="10"
-                      rx="5"
-                      fill="#00A0D2"
-                    />
-                  </svg>
-                ),
-              },
+            
             ];
 
             return icons.map((it, iconIdx) => {
@@ -540,7 +411,6 @@ export default function Home1() {
 
       <div className="relative z-10 md:px-10">
         <div className="md:max-w-5xl md:mx-auto px-6 text-center flex flex-col items-center">
-
           <motion.span
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -562,9 +432,8 @@ export default function Home1() {
             className="mt-5 sm:mt-7 font-semibold text-white text-center
               text-[26px] leading-[1.15] xs:text-[30px] sm:text-[48px] md:text-[62px] lg:text-[68px]"
           >
-           India’s #1 Restaurant Menu
-            <br className="hidden sm:block" />
-            {" "}
+            India&rsquo;s #1 Restaurant Menu
+            <br className="hidden sm:block" />{" "}
             <span className="inline-flex flex-wrap items-center justify-center gap-x-2 align-middle">
               <span
                 className="italic font-light"
@@ -577,29 +446,8 @@ export default function Home1() {
                   backgroundClip: "text",
                 }}
               >
-                 Engineering Delicious
+                Engineering
               </span>
-              <motion.span
-                initial={{ opacity: 0, scale: 0.5, rotate: -15 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                transition={{ duration: 0.5, delay: 0.5, type: "spring", stiffness: 200 }}
-                whileHover={{ rotate: 8, scale: 1.15 }}
-                className="relative inline-flex items-center justify-center w-[32px] h-[32px] sm:w-[50px] sm:h-[50px] md:w-[62px] md:h-[62px]
-                  rounded-2xl overflow-hidden border border-white/40
-                  shadow-[0_0_28px_rgba(255,255,255,0.45),0_8px_24px_rgba(0,0,0,0.5)]"
-                style={{
-                  background: "linear-gradient(145deg, rgba(40,40,40,0.7) 0%, rgba(10,10,10,0.8) 100%)",
-                  backdropFilter: "blur(10px)",
-                }}
-              >
-                <span className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 80%, rgba(255,255,255,0.45) 0%, transparent 65%)" }} />
-                <span className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.06) 45%, transparent 70%)" }} />
-                <span className="absolute inset-0 rounded-2xl shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.4)]" />
-                <span className="absolute inset-x-0 bottom-0 h-2/5" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.4), transparent)" }} />
-                <GiHamburger size={16} className="relative z-10 text-white sm:hidden" />
-                <GiHamburger size={26} className="relative z-10 text-white hidden sm:block md:hidden" />
-                <GiHamburger size={32} className="relative z-10 text-white hidden md:block" />
-              </motion.span>
               <span
                 className="font-light italic"
                 style={{
@@ -611,7 +459,7 @@ export default function Home1() {
                   backgroundClip: "text",
                 }}
               >
-                 Company
+                Company
               </span>
             </span>
           </motion.h1>
@@ -633,22 +481,9 @@ export default function Home1() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="mt-5 sm:mt-6 px-3 py-1 text-[13px] sm:text-[15px] md:text-base text-white/80 font-medium"
           >
-          From brand naming to engineered menus and stunning dine-in & Logo designs—your complete Menu Solution.
+            From brand naming to engineered menus and stunning dine-in & Logo
+            designs—your complete Menu Solution.
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-            className="mt-7 sm:mt-9 flex flex-wrap items-center justify-center gap-3 w-full"
-          >
-            <PrimaryGlassCta withArrow>
-              <Link to="/contact">Explore Restaurants</Link>
-            </PrimaryGlassCta>
-            <SecondaryGlassCta>
-              <Link to="/brands">View Menu</Link>
-            </SecondaryGlassCta>
-          </motion.div>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import {
   FaLinkedinIn,
   FaFacebookF,
   FaWhatsapp,
-} from "react-icons/fa";
+} from "react-icons/fa"; 
 import { HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
