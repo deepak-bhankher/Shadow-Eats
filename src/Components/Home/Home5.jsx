@@ -63,8 +63,8 @@ function ReelCard({ reel, index }) {
       className="relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] w-full max-w-[300px] mx-auto rounded-2xl overflow-hidden cursor-pointer group
         border border-white/10
         shadow-[0_16px_48px_rgba(0,0,0,0.6)]
-        hover:shadow-[0_0_0_1.5px_rgba(255,255,255,0.35),0_24px_64px_rgba(255,255,255,0.07)]
-        hover:border-white/30
+        hover:shadow-[0_0_0_1.5px_rgba(214,255,1,0.4),0_24px_64px_rgba(214,255,1,0.1)]
+        hover:border-[#D6ff01]/40
         transition-all duration-300"
     >
       {/* thumbnail shown until video plays */}
@@ -108,9 +108,9 @@ function ReelCard({ reel, index }) {
         <span
           className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
           style={{
-            background: "rgba(255,255,255,0.12)",
-            color: "#fff",
-            border: "1px solid rgba(255,255,255,0.2)",
+            background: "rgba(214,255,1,0.15)",
+            color: "#D6ff01",
+            border: "1px solid rgba(214,255,1,0.3)",
           }}
         >
           Short
@@ -130,14 +130,14 @@ function ReelCard({ reel, index }) {
           >
             <div
               className="w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center
-                border border-white/20 backdrop-blur-md"
+                border border-[#D6ff01]/30 backdrop-blur-md"
               style={{
-                background: "rgba(255,255,255,0.13)",
+                background: "rgba(214,255,1,0.15)",
                 boxShadow:
-                  "inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 32px rgba(0,0,0,0.4)",
+                  "inset 0 1px 0 rgba(214,255,1,0.3), 0 8px 32px rgba(0,0,0,0.4)",
               }}
             >
-              <FiPlay size={20} className="text-white translate-x-[2px]" />
+              <FiPlay size={20} className="text-[#D6ff01] translate-x-[2px]" />
             </div>
           </motion.div>
         )}
@@ -145,7 +145,7 @@ function ReelCard({ reel, index }) {
 
       {/* playing indicator — top right dot */}
       {playing && (
-        <span className="absolute top-3 right-3 w-2 h-2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(255,0,0,0.8)] animate-pulse" />
+        <span className="absolute top-3 right-3 w-2 h-2 rounded-full bg-[#D6ff01] shadow-[0_0_8px_rgba(214,255,1,0.8)] animate-pulse" />
       )}
     </motion.div>
   );
@@ -159,9 +159,9 @@ export default function Home5() {
           <span
             className="text-xs font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full"
             style={{
-              background: "rgba(255,255,255,0.08)",
-              color: "#fff",
-              border: "1px solid rgba(255,255,255,0.15)",
+              background: "rgba(214,255,1,0.1)",
+              color: "#D6ff01",
+              border: "1px solid rgba(214,255,1,0.25)",
             }}
           >
             Partner Shorts

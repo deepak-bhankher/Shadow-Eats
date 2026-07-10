@@ -21,7 +21,7 @@ export default function Home3() {
 
         <motion.div
           {...fadeUp(0.1)}
-          className="mt-10 w-full rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+          className="mt-10 w-full rounded-3xl overflow-hidden border border-[#D6ff01]/15 shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
         >
           <img
             src="bg2.png"
@@ -53,7 +53,8 @@ export default function Home3() {
           <img
             src="aman.png"
             alt="Aman Bhardwaj"
-            className="w-40 h-40 rounded-full object-cover border border-white/15"
+            className="w-40 h-40 rounded-full object-cover border-2 border-[#D6ff01]/40"
+            style={{ boxShadow: "0 0 24px rgba(214,255,1,0.15)" }}
           />
 
           <p className="text-white/70 text-base sm:text-lg leading-relaxed">
@@ -65,7 +66,7 @@ export default function Home3() {
           </p>
 
           <span className="text-white font-medium text-sm sm:text-base tracking-wide">
-            Aman Bhardwaj <span className="text-white/40">— Founder & CEO</span>
+            Aman Bhardwaj <span className="text-[#D6ff01]/70">— Founder & CEO</span>
           </span>
         </motion.div>
       </div>

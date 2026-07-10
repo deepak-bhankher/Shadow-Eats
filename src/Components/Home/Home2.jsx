@@ -46,21 +46,21 @@ function StepCard({ step, index }) {
       whileHover={{ y: -6 }}
       transition={{ duration: 0.3 }}
       className="relative flex flex-col h-full gap-5 p-6 sm:p-7 rounded-2xl border border-white/10
-        bg-white/[0.04] hover:bg-white/[0.07] hover:border-white/25
+        bg-white/[0.04] hover:bg-white/[0.07] hover:border-[#D6ff01]/30
         transition-all duration-300"
     >
       {/* top row: icon + number */}
       <div className="flex items-center justify-between">
         <div
-          className="w-11 h-11 rounded-xl flex items-center justify-center border border-white/15"
+          className="w-11 h-11 rounded-xl flex items-center justify-center border border-[#D6ff01]/20"
           style={{
             background:
-              "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.03) 100%)",
+              "linear-gradient(135deg, rgba(214,255,1,0.14) 0%, rgba(214,255,1,0.03) 100%)",
           }}
         >
-          <Icon size={20} className="text-white" />
+          <Icon size={20} className="text-[#D6ff01]" />
         </div>
-        <span className="text-white/25 text-xs font-semibold tracking-widest">
+        <span className="text-[#D6ff01]/40 text-xs font-semibold tracking-widest">
           {step.number}
         </span>
       </div>
@@ -76,9 +76,9 @@ function StepCard({ step, index }) {
       <motion.button
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        className="mt-1 self-start px-5 py-2 rounded-lg bg-white text-black font-semibold text-sm
-          border border-white hover:bg-black hover:text-white
-          shadow-[0_6px_18px_rgba(0,0,0,0.45)] hover:shadow-[0_8px_22px_rgba(255,255,255,0.12)]
+        className="mt-1 self-start px-5 py-2 rounded-lg bg-[#D6ff01] text-black font-semibold text-sm
+          border border-[#D6ff01] hover:bg-black hover:text-[#D6ff01]
+          shadow-[0_6px_18px_rgba(214,255,1,0.2)] hover:shadow-[0_8px_22px_rgba(214,255,1,0.3)]
           transition-all duration-300 cursor-pointer"
       >
         Explore

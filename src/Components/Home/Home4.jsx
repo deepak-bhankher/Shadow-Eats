@@ -19,20 +19,20 @@ export default function Home4() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 70% 40% at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 40% at 50% 0%, rgba(214,255,1,0.06) 0%, transparent 70%)",
         }}
       />
 
       {/* ── Heading ── */}
       <div className="relative max-w-4xl mx-auto flex flex-col items-center text-center px-6">
         <motion.div {...fadeUp(0)} className="flex flex-col items-center gap-3">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-white/30">
+          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#D6ff01]/60">
             Press &amp; Media
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white">
             In the News
           </h1>
-          <div className="w-8 h-px bg-white/15 mt-1" />
+          <div className="w-8 h-px bg-[#D6ff01]/40 mt-1" />
         </motion.div>
       </div>
 
@@ -53,9 +53,9 @@ export default function Home4() {
                 className="shrink-0 flex items-center justify-center rounded-2xl"
                 style={{
                   padding: "22px 32px",
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.09)",
-                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.07), 0 4px 24px rgba(0,0,0,0.5)",
+                  background: "rgba(214,255,1,0.05)",
+                  border: "1px solid rgba(214,255,1,0.12)",
+                  boxShadow: "inset 0 1px 0 rgba(214,255,1,0.08), 0 4px 24px rgba(0,0,0,0.5)",
                 }}
               >
                 <img
@@ -76,7 +76,7 @@ export default function Home4() {
           {...fadeUp(0.2)}
           className="mt-24 sm:mt-32 flex flex-col items-center gap-5"
         >
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-white/30">
+          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#D6ff01]/60">
             Get in Touch
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white">
@@ -84,14 +84,15 @@ export default function Home4() {
           </h2>
 
           <motion.a
-              whileHover={{ y: -3, boxShadow: "0 20px 40px rgba(255,255,255,0.15), inset 0 1px 0 rgba(255,255,255,0.8)" }}
+              whileHover={{ y: -3, boxShadow: "0 20px 40px rgba(214,255,1,0.25), inset 0 1px 0 rgba(214,255,1,0.8)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="px-12 sm:px-16 py-3.5 sm:py-4 rounded-xl text-white hover:bg-white hover:text-black  font-semibold text-sm sm:text-base cursor-pointer "
+              className="px-12 sm:px-16 py-3.5 sm:py-4 rounded-xl text-white hover:bg-[#D6ff01] hover:text-black  font-semibold text-sm sm:text-base cursor-pointer "
               style={{
                 fontFamily: "Inter, sans-serif",
-                boxShadow: "0 10px 28px rgba(255,255,255,0.1), inset 0 1px 0 rgba(255,255,255,0.9)",
+                boxShadow: "0 10px 28px rgba(214,255,1,0.15), inset 0 1px 0 rgba(214,255,1,0.9)",
                 letterSpacing: "0.04em",
+                border: "1px solid rgba(214,255,1,0.3)",
               }}
             >
             +91 77770 24365
