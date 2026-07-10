@@ -163,7 +163,7 @@ export default function Brand5() {
                 boxShadow: "0 16px 40px rgba(252,128,25,0.25), inset 0 1px 0 rgba(255,255,255,0.15)",
               }}
             >
-             <img src="swiggy.png" alt="swiggy" className="rounded-xl" />
+             <img src="Swiggy1.png" alt="swiggy" className="rounded-xl" />
             </motion.a>
           </motion.div>
         </SectionBlock>
