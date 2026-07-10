@@ -184,7 +184,8 @@ function GlassButtonBase({
         background:
           hovered && hoverBackground
             ? hoverBackground
-            : background ?? "linear-gradient(180deg, #D6ff01 0%, #b8dd00 100%)",
+            : (background ??
+              "linear-gradient(180deg, #D6ff01 0%, #b8dd00 100%)"),
       }}
     >
       <span
@@ -224,11 +225,29 @@ export default function Home1() {
       data-theme="dark"
       className="relative w-full min-h-screen flex flex-col justify-center pt-24 sm:pt-28 pb-16 sm:pb-24 overflow-hidden"
     >
+      {/* background image */}
+      <img
+        src="bg1.png"
+        alt="bg"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{
+          filter: "brightness(45%) contrast(120%) saturate(110%)",
+          transform: "scale(1.05)",
+        }}
+      />
+
+      {/* black overlay on top of image — lowered opacity so image peeks through */}
       <div
         className="absolute inset-0"
         style={{
-          background:
-            "linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.65) 100%)",
+          background: `
+      linear-gradient(
+        135deg,
+        rgba(0,0,0,0.65) 0%,
+        rgba(0,0,0,0.45) 45%,
+        rgba(0,0,0,0.75) 100%
+      )
+    `,
         }}
       />
 
@@ -415,13 +434,7 @@ export default function Home1() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-[#D6ff01] text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#D6ff01]/30"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(214,255,1,0.12) 0%, rgba(214,255,1,0.02) 100%)",
-              backdropFilter: "blur(6px)",
-              boxShadow: "inset 0 1px 0 rgba(214,255,1,0.15), 0 0 20px rgba(214,255,1,0.08)",
-            }}
+            className=" text-white text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#D6ff01]/30"
           >
             Restaurant Growth Partner
           </motion.span>

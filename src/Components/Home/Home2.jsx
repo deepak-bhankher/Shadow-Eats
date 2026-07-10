@@ -53,12 +53,9 @@ function StepCard({ step, index }) {
       <div className="flex items-center justify-between">
         <div
           className="w-11 h-11 rounded-xl flex items-center justify-center border border-[#D6ff01]/20"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(214,255,1,0.14) 0%, rgba(214,255,1,0.03) 100%)",
-          }}
+          
         >
-          <Icon size={20} className="text-[#D6ff01]" />
+          <Icon size={20}   className="text-white"/>
         </div>
         <span className="text-[#D6ff01]/40 text-xs font-semibold tracking-widest">
           {step.number}
@@ -76,8 +73,8 @@ function StepCard({ step, index }) {
       <motion.button
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        className="mt-1 self-start px-5 py-2 rounded-lg bg-[#D6ff01] text-black font-semibold text-sm
-          border border-[#D6ff01] hover:bg-black hover:text-[#D6ff01]
+        className="mt-1 self-start px-5 py-2 rounded-lg text-white  font-semibold text-sm
+          border border-[#D6ff01] hover:bg-black 
           shadow-[0_6px_18px_rgba(214,255,1,0.2)] hover:shadow-[0_8px_22px_rgba(214,255,1,0.3)]
           transition-all duration-300 cursor-pointer"
       >

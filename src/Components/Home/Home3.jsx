@@ -66,7 +66,7 @@ export default function Home3() {
           </p>
 
           <span className="text-white font-medium text-sm sm:text-base tracking-wide">
-            Aman Bhardwaj <span className="text-[#D6ff01]/70">— Founder & CEO</span>
+            Aman Bhardwaj <span>— Founder & CEO</span>
           </span>
         </motion.div>
       </div>

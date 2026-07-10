@@ -22,7 +22,7 @@ function About3() {
 
         <motion.div
           {...fadeUp(0.1)}
-          className="mt-10 w-full rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+          className="mt-10 w-full rounded-3xl overflow-hidden border border-[#D6ff01]/15 shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
         >
           <img
             src="bg2.png"

@@ -23,11 +23,9 @@ export default function About1() {
       <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center gap-6">
         <motion.span
           {...fadeUp(0)}
-          className="text-white/70 text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-white/15"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)",
-          }}
+          className="text-white text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#D6ff01]/30"
+       
+          
         >
           Smart Solutions · Stunning Design · Stronger Sales
         </motion.span>

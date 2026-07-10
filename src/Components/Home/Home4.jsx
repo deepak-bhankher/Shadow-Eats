@@ -17,10 +17,7 @@ export default function Home4() {
       {/* subtle radial glow bg */}
       <div
         className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 40% at 50% 0%, rgba(214,255,1,0.06) 0%, transparent 70%)",
-        }}
+       
       />
 
       {/* ── Heading ── */}
@@ -53,9 +50,9 @@ export default function Home4() {
                 className="shrink-0 flex items-center justify-center rounded-2xl"
                 style={{
                   padding: "22px 32px",
-                  background: "rgba(214,255,1,0.05)",
+                  
                   border: "1px solid rgba(214,255,1,0.12)",
-                  boxShadow: "inset 0 1px 0 rgba(214,255,1,0.08), 0 4px 24px rgba(0,0,0,0.5)",
+                 
                 }}
               >
                 <img

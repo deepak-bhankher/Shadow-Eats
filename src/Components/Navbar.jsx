@@ -27,7 +27,7 @@ function NavItem({ label, path }) {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative px-3 lg:px-4 py-2 cursor-pointer"
+      className="relative px-2 lg:px-4 py-2 cursor-pointer"
     >
       <AnimatePresence>
         {active && (
@@ -39,16 +39,16 @@ function NavItem({ label, path }) {
             className="absolute inset-0 rounded-lg"
             style={{
               background:
-                "linear-gradient(180deg, rgba(214,255,1,0.16) 0%, rgba(214,255,1,0.04) 100%)",
-              border: "1px solid rgba(214,255,1,0.35)",
+                "#fffff",
+              border: "1px #ffffff solid",
               boxShadow:
-                "inset 0 1px 0 rgba(214,255,1,0.2), 0 4px 14px rgba(214,255,1,0.12)",
+                "inset 0 1px 0 rgba(255,255,255,0.25), 0 4px 12px rgba(0,0,0,0.25)",
             }}
           />
         )}
       </AnimatePresence>
       <motion.span
-        animate={{ color: active ? ACCENT : "rgba(255,255,255,0.5)" }}
+        animate={{ color: active ? ACCENT : "#ffffff" }}
         transition={{ duration: 0.2 }}
         className="relative text-[13px] lg:text-sm font-medium tracking-wide whitespace-nowrap"
       >
@@ -135,7 +135,7 @@ export default function Navbar() {
             className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-2xl"
             style={{
               background:
-                "radial-gradient(60% 100% at 50% 0%, rgba(214,255,1,0.08) 0%, transparent 70%)",
+                "radial-gradient(60% 100% at 50% 0%, rgba(255,255,255,0.10) 0%, transparent 70%)",
             }}
           />
 
@@ -186,13 +186,12 @@ export default function Navbar() {
             <motion.button
               whileTap={{ scale: 0.87 }}
               onClick={() => setOpen(!open)}
-              className="md:hidden cursor-pointer p-2 rounded-xl transition-all duration-300"
+              className="md:hidden cursor-pointer p-2 rounded-xl text-white transition-all duration-300"
               style={{
-                color: ACCENT,
                 background:
-                  "linear-gradient(180deg, rgba(214,255,1,0.14) 0%, rgba(214,255,1,0.04) 100%)",
-                border: "1px solid rgba(214,255,1,0.25)",
-                boxShadow: "inset 0 1px 0 rgba(214,255,1,0.15)",
+                  "linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%)",
+                border: "1px solid rgba(255,255,255,0.16)",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.2)",
               }}
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -237,7 +236,7 @@ export default function Navbar() {
                 className="pointer-events-none absolute inset-x-0 top-0 h-1/3"
                 style={{
                   background:
-                    "radial-gradient(70% 100% at 50% 0%, rgba(214,255,1,0.10) 0%, transparent 70%)",
+                    "radial-gradient(70% 100% at 50% 0%, rgba(255,255,255,0.10) 0%, transparent 70%)",
                 }}
               />
 
@@ -251,8 +250,8 @@ export default function Navbar() {
                     className="list-none"
                   >
                     <Link to={link.path} onClick={() => setOpen(false)}>
-                      <div className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-white/60 hover:text-white hover:bg-[#D6FF01]/8 transition-all duration-200">
-                        <span className="w-1 h-1 rounded-full bg-[#D6FF01]/60 shrink-0" />
+                      <div className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-white/60 hover:text-white hover:bg-white/8 hover:border hover:border-[#D6FF01]/30 transition-all duration-200">
+                        <span className="w-1 h-1 rounded-full bg-white/30 shrink-0" />
                         {link.name}
                       </div>
                     </Link>
@@ -272,7 +271,7 @@ export default function Navbar() {
                         background:
                           "linear-gradient(180deg, #D6FF01 0%, #b8dd00 100%)",
                         boxShadow:
-                          "0 6px 20px rgba(214,255,1,0.35), inset 0 1px 0 rgba(255,255,255,0.5)",
+                          "0 6px 18px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.6)",
                       }}
                     >
                       <FaPhoneAlt size={13} />
