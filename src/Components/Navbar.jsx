@@ -48,7 +48,7 @@ function NavItem({ label, path }) {
         )}
       </AnimatePresence>
       <motion.span
-        animate={{ color: active ? ACCENT : "#ffffff" }}
+        animate={{ color: "#ffffff" }}
         transition={{ duration: 0.2 }}
         className="relative text-[13px] lg:text-sm font-medium tracking-wide whitespace-nowrap"
       >

@@ -53,7 +53,7 @@ export default function Home3() {
           <img
             src="aman.png"
             alt="Aman Bhardwaj"
-            className="w-40 h-40 rounded-full object-cover border-2 border-[#D6ff01]/40"
+            className="w-40 h-40 rounded-full object-cover border-2 border-white"
             style={{ boxShadow: "0 0 24px rgba(214,255,1,0.15)" }}
           />
 
