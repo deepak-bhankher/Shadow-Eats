@@ -162,7 +162,7 @@ export default function Brand3() {
   250
   <span
     style={{
-      background: "linear-gradient(120deg, #f3d98b 0%, #e8b95f 45%, #f3d98b 100%)",
+      background:"#D6ff01",
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
       backgroundClip: "text",

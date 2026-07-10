@@ -4,9 +4,11 @@ import {
   FaLinkedinIn,
   FaFacebookF,
   FaWhatsapp,
-} from "react-icons/fa"; 
+} from "react-icons/fa";
 import { HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
 import { Link } from "react-router-dom";
+
+const ACCENT = "#D6FF01";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -72,8 +74,8 @@ export default function Footer() {
                     transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center
-                      shadow-[0_4px_14px_rgba(255,255,255,0.15)] hover:shadow-[0_6px_20px_rgba(255,255,255,0.3)]
+                    className="w-10 h-10 rounded-full bg-[#D6FF01] text-black flex items-center justify-center
+                      shadow-[0_4px_14px_rgba(214,255,1,0.25)] hover:shadow-[0_6px_20px_rgba(214,255,1,0.45)]
                       transition-shadow duration-300"
                   >
                     <Icon size={16} />
@@ -85,17 +87,23 @@ export default function Footer() {
 
           {/* Right: get in touch */}
           <motion.div {...fadeUp(0.15)} className="md:min-w-[340px]">
-            <h3 className="text-xl sm:text-2xl font-semibold">Get in touch</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#D6FF01] inline-block" />
+              Get in touch
+            </h3>
 
             <div className="mt-6 flex flex-col gap-5">
               {CONTACTS.map((c, i) => {
                 const Icon = c.icon;
                 const content = (
                   <>
-                    <span className="w-9 h-9 shrink-0 rounded-full border border-white/20 flex items-center justify-center">
-                      <Icon size={16} className="text-white" />
+                    <span className="w-9 h-9 shrink-0 rounded-full border border-white/20 flex items-center justify-center group-hover:border-[#D6FF01] group-hover:bg-[#D6FF01]/10 transition-all duration-300">
+                      <Icon
+                        size={16}
+                        className="text-white group-hover:text-[#D6FF01] transition-colors duration-300"
+                      />
                     </span>
-                    <span className="text-gray-400 hover:text-white transition-all cursor-pointer duration-300 text-sm sm:text-base leading-snug">
+                    <span className="text-gray-400 group-hover:text-white transition-all cursor-pointer duration-300 text-sm sm:text-base leading-snug">
                       {c.text}
                     </span>
                   </>
@@ -117,7 +125,7 @@ export default function Footer() {
                         {content}
                       </a>
                     ) : (
-                      <div className="flex items-start gap-3">{content}</div>
+                      <div className="flex items-start gap-3 group">{content}</div>
                     )}
                   </motion.div>
                 );
@@ -132,7 +140,7 @@ export default function Footer() {
           whileInView={{ scaleX: 1, opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-          className="mt-14 sm:mt-16 h-px w-full bg-white/10 origin-left"
+          className="mt-14 sm:mt-16 h-px w-full bg-gradient-to-r from-transparent via-[#D6FF01]/30 to-transparent origin-left"
         />
 
         {/* bottom row */}

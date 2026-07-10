@@ -38,22 +38,22 @@ const IMAGE_CARDS_TOP = [
 const NAME_PLANNER = {
   number: "4",
   img: "About4.png",
-  title: "Restaurant ",
-  desc: "Shadow Eats create memorable, brand aligned restaurant names that resonate with your audience. Every name is designed to reflect your concept and attract diners.",
+  title: "Menu Graphics Design ",
+  desc: "Shadow Eats design attractive dine-in menus that showcase your best dishes, enhancing the dining experience and boosting orders.",
 };
 
 const TEXT_CARDS = [
   {
     number: "5",
-    img: "About6.png",
-    title: "Menu Graphics Design",
-    desc: "Shadow Eats design attractive dine-in menus that showcase your best dishes, enhancing the dining experience and boosting orders.",
+    img: "About9.png",
+    title: "Shadow Eats - Home Pro",
+    desc: "Shadow Eats Home Pro helps home chefs transform their kitchens into fully operational cloud kitchens.",
   },
   {
     number: "6",
     img: "About8.png",
-    title: "F&B Photoshoot",
-    desc: "We set up professional photoshoots for Zomato and Swiggy brand pages, delivering high-quality images and videos optimized for online ordering platforms. Currently available across North India.",
+    title: "Shadow Eats - Virtual Brands",
+    desc: "Shadow Eats – Virtual Brands partners with fine-dine restaurants by offering ready-to-run virtual brand franchises.",
   },
 ];
 

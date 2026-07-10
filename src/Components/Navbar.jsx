@@ -15,6 +15,7 @@ const NAV_LINKS = [
 
 const PHONE_NUMBER = "+91 95548 24365";
 const PHONE_HREF = "tel:+919554824365";
+const ACCENT = "#D6FF01";
 
 function NavItem({ label, path }) {
   const { pathname } = useLocation();
@@ -38,16 +39,16 @@ function NavItem({ label, path }) {
             className="absolute inset-0 rounded-lg"
             style={{
               background:
-                "linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.05) 100%)",
-              border: "1px solid rgba(255,255,255,0.16)",
+                "linear-gradient(180deg, rgba(214,255,1,0.16) 0%, rgba(214,255,1,0.04) 100%)",
+              border: "1px solid rgba(214,255,1,0.35)",
               boxShadow:
-                "inset 0 1px 0 rgba(255,255,255,0.25), 0 4px 12px rgba(0,0,0,0.25)",
+                "inset 0 1px 0 rgba(214,255,1,0.2), 0 4px 14px rgba(214,255,1,0.12)",
             }}
           />
         )}
       </AnimatePresence>
       <motion.span
-        animate={{ color: active ? "#ffffff" : "rgba(255,255,255,0.5)" }}
+        animate={{ color: active ? ACCENT : "rgba(255,255,255,0.5)" }}
         transition={{ duration: 0.2 }}
         className="relative text-[13px] lg:text-sm font-medium tracking-wide whitespace-nowrap"
       >
@@ -69,13 +70,13 @@ function CtaButton() {
       className="relative px-5 py-2 flex gap-2 items-center rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 overflow-hidden"
       style={{
         background: hovered
-          ? "rgba(255,255,255,0.10)"
-          : "linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%)",
-        color: hovered ? "#ffffff" : "#000000",
-        border: "1px solid rgba(255,255,255,0.9)",
+          ? "#000000"
+          : "linear-gradient(180deg, #D6FF01 0%, #b8dd00 100%)",
+        color: hovered ? ACCENT : "#000000",
+        border: "1px solid rgba(214,255,1,0.9)",
         boxShadow: hovered
-          ? "inset 0 1px 0 rgba(255,255,255,0.2)"
-          : "0 6px 18px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.6)",
+          ? "inset 0 1px 0 rgba(214,255,1,0.2)"
+          : "0 6px 20px rgba(214,255,1,0.35), inset 0 1px 0 rgba(255,255,255,0.5)",
         transition:
           "background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
       }}
@@ -134,7 +135,7 @@ export default function Navbar() {
             className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-2xl"
             style={{
               background:
-                "radial-gradient(60% 100% at 50% 0%, rgba(255,255,255,0.10) 0%, transparent 70%)",
+                "radial-gradient(60% 100% at 50% 0%, rgba(214,255,1,0.08) 0%, transparent 70%)",
             }}
           />
 
@@ -185,12 +186,13 @@ export default function Navbar() {
             <motion.button
               whileTap={{ scale: 0.87 }}
               onClick={() => setOpen(!open)}
-              className="md:hidden cursor-pointer p-2 rounded-xl text-white transition-all duration-300"
+              className="md:hidden cursor-pointer p-2 rounded-xl transition-all duration-300"
               style={{
+                color: ACCENT,
                 background:
-                  "linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%)",
-                border: "1px solid rgba(255,255,255,0.16)",
-                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.2)",
+                  "linear-gradient(180deg, rgba(214,255,1,0.14) 0%, rgba(214,255,1,0.04) 100%)",
+                border: "1px solid rgba(214,255,1,0.25)",
+                boxShadow: "inset 0 1px 0 rgba(214,255,1,0.15)",
               }}
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -235,7 +237,7 @@ export default function Navbar() {
                 className="pointer-events-none absolute inset-x-0 top-0 h-1/3"
                 style={{
                   background:
-                    "radial-gradient(70% 100% at 50% 0%, rgba(255,255,255,0.10) 0%, transparent 70%)",
+                    "radial-gradient(70% 100% at 50% 0%, rgba(214,255,1,0.10) 0%, transparent 70%)",
                 }}
               />
 
@@ -249,8 +251,8 @@ export default function Navbar() {
                     className="list-none"
                   >
                     <Link to={link.path} onClick={() => setOpen(false)}>
-                      <div className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-white/60 hover:text-white hover:bg-white/8 transition-all duration-200">
-                        <span className="w-1 h-1 rounded-full bg-white/30 shrink-0" />
+                      <div className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-white/60 hover:text-white hover:bg-[#D6FF01]/8 transition-all duration-200">
+                        <span className="w-1 h-1 rounded-full bg-[#D6FF01]/60 shrink-0" />
                         {link.name}
                       </div>
                     </Link>
@@ -268,9 +270,9 @@ export default function Navbar() {
                       className="w-full flex justify-center items-center gap-2 py-3 px-6 rounded-xl cursor-pointer text-sm font-semibold text-black transition-all duration-300"
                       style={{
                         background:
-                          "linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%)",
+                          "linear-gradient(180deg, #D6FF01 0%, #b8dd00 100%)",
                         boxShadow:
-                          "0 6px 18px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.6)",
+                          "0 6px 20px rgba(214,255,1,0.35), inset 0 1px 0 rgba(255,255,255,0.5)",
                       }}
                     >
                       <FaPhoneAlt size={13} />

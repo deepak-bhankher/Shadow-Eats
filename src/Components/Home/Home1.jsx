@@ -4,6 +4,8 @@ import { FaStar } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router-dom";
 
+const ACCENT = "#D6ff01";
+
 function useResponsiveIconSize() {
   const [iconSize, setIconSize] = useState(44);
 
@@ -62,20 +64,20 @@ function GlassIconCard({
   rotate = 0,
 }) {
   const toneMap = {
-    swiggy: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
-    zomato: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
-    mcdonalds: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
-    subway: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
-    kfc: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
-    dominos: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
-    startbucks: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
-    burgerking: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
-    pizzahut: { accent: "#E5E5  E5", accent2: "rgba(255,255,255,0.35)" },
-    dunkin: { accent: "#E5E5E5", accent2: "rgba(255,255,255,0.35)" },
+    swiggy: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
+    zomato: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
+    mcdonalds: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
+    subway: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
+    kfc: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
+    dominos: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
+    startbucks: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
+    burgerking: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
+    pizzahut: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
+    dunkin: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
   };
   const toneStyles = toneMap[tone] ?? {
-    accent: "#FFFFFF",
-    accent2: "rgba(255,255,255,0.30)",
+    accent: "#D6ff01",
+    accent2: "rgba(214,255,1,0.30)",
   };
 
   return (
@@ -99,7 +101,7 @@ function GlassIconCard({
             "linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.90) 55%, rgba(255,255,255,0.85) 100%)",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
-          border: "1px solid rgba(255,255,255,0.6)",
+          border: "1px solid rgba(214,255,1,0.4)",
           boxShadow:
             depth > 0
               ? `0 18px 40px rgba(0,0,0,0.35), 0 0 24px ${toneStyles.accent2}`
@@ -111,7 +113,7 @@ function GlassIconCard({
         className="absolute inset-x-0 top-0 h-1/2 rounded-t-2xl"
         style={{
           background:
-            "radial-gradient(60% 90% at 50% -10%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 40%, transparent 70%)",
+            "radial-gradient(60% 90% at 50% -10%, rgba(214,255,1,0.35) 0%, rgba(255,255,255,0.4) 40%, transparent 70%)",
           borderTopLeftRadius: 12,
           borderTopRightRadius: 12,
         }}
@@ -173,13 +175,16 @@ function GlassButtonBase({
       whileTap={{ scale: 0.97, y: 1 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
       className="relative px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 flex gap-2 sm:gap-2.5 justify-center items-center rounded-full
-        text-sm sm:text-base font-semibold text-white cursor-pointer whitespace-nowrap
-        overflow-hidden border border-white/10
-        shadow-[0_10px_26px_rgba(0,0,0,0.6)]
-        hover:shadow-[0_14px_32px_rgba(0,0,0,0.65)]
+        text-sm sm:text-base font-semibold text-black cursor-pointer whitespace-nowrap
+        overflow-hidden border border-[#D6ff01]/40
+        shadow-[0_10px_26px_rgba(214,255,1,0.25)]
+        hover:shadow-[0_14px_32px_rgba(214,255,1,0.4)]
         transition-shadow duration-300"
       style={{
-        background: hovered && hoverBackground ? hoverBackground : background,
+        background:
+          hovered && hoverBackground
+            ? hoverBackground
+            : background ?? "linear-gradient(180deg, #D6ff01 0%, #b8dd00 100%)",
       }}
     >
       <span
@@ -192,14 +197,14 @@ function GlassButtonBase({
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(25% 80% at 6% 50%, rgba(255,255,255,0.12), transparent 70%), radial-gradient(25% 80% at 94% 50%, rgba(255,255,255,0.12), transparent 70%)",
+            "radial-gradient(25% 80% at 6% 50%, rgba(255,255,255,0.15), transparent 70%), radial-gradient(25% 80% at 94% 50%, rgba(255,255,255,0.15), transparent 70%)",
         }}
       />
-      <span className="pointer-events-none absolute inset-0 rounded-full shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.5)]" />
+      <span className="pointer-events-none absolute inset-0 rounded-full shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.6)]" />
       <span
         className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 rounded-b-full"
         style={{
-          background: "linear-gradient(to top, rgba(0,0,0,0.45), transparent)",
+          background: "linear-gradient(to top, rgba(0,0,0,0.18), transparent)",
         }}
       />
 
@@ -227,17 +232,26 @@ export default function Home1() {
         }}
       />
 
+      {/* subtle lime ambient glow behind hero content */}
+      <div
+        className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full"
+        style={{
+          background:
+            "radial-gradient(closest-side, rgba(214,255,1,0.08), transparent 70%)",
+        }}
+      />
+
       <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-[380px] sm:top-[240px] md:top-[260px] w-full max-w-[95vw] sm:max-w-[110vw] md:w-[1100px] md:max-w-[150vw] h-[220px] sm:h-[630px] md:h-[660px] overflow-hidden pointer-events-none">
         <div className="absolute top-[16px] sm:top-[-120px] md:top-[-150px] left-0 w-full h-[190px] sm:h-[650px] md:h-[650px]">
           <svg
-            className="absolute inset-0 w-full h-full opacity-60"
+            className="absolute inset-0 w-full h-full opacity-70"
             viewBox="0 0 1100 650"
             fill="none"
             preserveAspectRatio="none"
           >
             <path
               d="M20 20 C 20 500, 280 620, 550 620 C 820 620, 1080 500, 1080 20"
-              stroke="#FFFFFF55"
+              stroke="#D6ff0155"
               strokeWidth="2"
             />
           </svg>
@@ -276,7 +290,7 @@ export default function Home1() {
                   />
                 ),
               },
-               {
+              {
                 tone: "subway",
                 icon: (
                   <img
@@ -308,7 +322,7 @@ export default function Home1() {
                     draggable={false}
                   />
                 ),
-              },  
+              },
               {
                 tone: "startbucks",
                 icon: (
@@ -319,7 +333,7 @@ export default function Home1() {
                     draggable={false}
                   />
                 ),
-              },  
+              },
               {
                 tone: "burgerking",
                 icon: (
@@ -342,7 +356,6 @@ export default function Home1() {
                   />
                 ),
               },
-            
             ];
 
             return icons.map((it, iconIdx) => {
@@ -402,11 +415,12 @@ export default function Home1() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-white/70 text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-white/15"
+            className="text-[#D6ff01] text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#D6ff01]/30"
             style={{
               background:
-                "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%)",
+                "linear-gradient(135deg, rgba(214,255,1,0.12) 0%, rgba(214,255,1,0.02) 100%)",
               backdropFilter: "blur(6px)",
+              boxShadow: "inset 0 1px 0 rgba(214,255,1,0.15), 0 0 20px rgba(214,255,1,0.08)",
             }}
           >
             Restaurant Growth Partner
@@ -427,10 +441,11 @@ export default function Home1() {
                 style={{
                   fontFamily: "'Instrument Serif', serif",
                   background:
-                    "linear-gradient(120deg, #f3d98b 0%, #e8b95f 45%, #f3d98b 100%)",
+                    "linear-gradient(180deg, #eaff66 0%, #D6ff01 55%, #a8cc00 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
+                  filter: "drop-shadow(0 0 18px rgba(214,255,1,0.35))",
                 }}
               >
                 Engineering
@@ -440,10 +455,11 @@ export default function Home1() {
                 style={{
                   fontFamily: "'Instrument Serif', serif",
                   background:
-                    "linear-gradient(120deg, #f3d98b 0%, #e8b95f 45%, #f3d98b 100%)",
+                    "linear-gradient(180deg, #eaff66 0%, #D6ff01 55%, #a8cc00 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
+                  filter: "drop-shadow(0 0 18px rgba(214,255,1,0.35))",
                 }}
               >
                 Company
@@ -457,8 +473,8 @@ export default function Home1() {
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
             className="mt-5 sm:mt-6 w-16 h-px"
             style={{
-              background:
-                "linear-gradient(90deg, transparent, rgba(232,185,95,0.7), transparent)",
+              background: "#D6ff01",
+              boxShadow: "0 0 12px rgba(214,255,1,0.6)",
             }}
           />
 

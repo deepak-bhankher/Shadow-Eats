@@ -44,8 +44,7 @@ export default function About1() {
               fontWeight: 400,
               fontStyle: "italic",
               fontSize: "1.15em",
-              background:
-                "linear-gradient(120deg, #f3d98b 0%, #e8b95f 45%, #f3d98b 100%)",
+               background:"#D6ff01",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -59,8 +58,7 @@ export default function About1() {
           {...fadeUp(0.25)}
           className="w-16 h-px mt-2"
           style={{
-            background:
-              "linear-gradient(90deg, transparent, rgba(232,185,95,0.7), transparent)",
+           background:"#D6ff01"
           }}
         />
       </div>
