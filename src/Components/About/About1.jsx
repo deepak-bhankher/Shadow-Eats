@@ -23,7 +23,7 @@ export default function About1() {
       <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center gap-6">
         <motion.span
           {...fadeUp(0)}
-          className="text-white text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#D6ff01]/30"
+          className="text-white text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#D6ff01]"
        
           
         >

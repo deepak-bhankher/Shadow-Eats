@@ -24,7 +24,7 @@ const TESTIMONIALS = [
     name: "Manish Khattar",
     avatar: "client-avatar2.png",
     stars: 4,
-  },
+  },  
   {
     quote:
       "Working with Shadow Eats felt like having an in-house growth team. Every recommendation was backed by real data, and the results showed up in our order numbers within weeks.",
@@ -70,7 +70,7 @@ function TestimonialCard({ item }) {
       {/* stars */}
       <div className="flex gap-1 -mt-2">
         {Array.from({ length: item.stars }).map((_, i) => (
-          <FiStar key={i} size={13} className="fill-white text-white" />
+          <FiStar key={i} size={13} className="fill-white text-[#D6ff01]" />
         ))}
       </div>
 

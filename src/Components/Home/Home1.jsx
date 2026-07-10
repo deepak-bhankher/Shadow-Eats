@@ -253,12 +253,12 @@ export default function Home1() {
 
       {/* subtle lime ambient glow behind hero content */}
       <div
-        className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full"
-        style={{
-          background:
-            "radial-gradient(closest-side, rgba(214,255,1,0.08), transparent 70%)",
-        }}
-      />
+  className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full"
+  style={{
+    background:
+      "radial-gradient(closest-side, rgba(214,255,1,0), transparent 70%)",
+  }}
+/>
 
       <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-[380px] sm:top-[240px] md:top-[260px] w-full max-w-[95vw] sm:max-w-[110vw] md:w-[1100px] md:max-w-[150vw] h-[220px] sm:h-[630px] md:h-[660px] overflow-hidden pointer-events-none">
         <div className="absolute top-[16px] sm:top-[-120px] md:top-[-150px] left-0 w-full h-[190px] sm:h-[650px] md:h-[650px]">
@@ -458,7 +458,7 @@ export default function Home1() {
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
-                  filter: "drop-shadow(0 0 18px rgba(214,255,1,0.35))",
+                  
                 }}
               >
                 Engineering
@@ -472,7 +472,7 @@ export default function Home1() {
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
-                  filter: "drop-shadow(0 0 18px rgba(214,255,1,0.35))",
+                
                 }}
               >
                 Company

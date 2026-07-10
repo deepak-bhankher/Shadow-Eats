@@ -64,7 +64,8 @@ function NumberBadge({ n, delay = 0 }) {
       className="inline-flex items-center justify-center w-9 h-9 rounded-lg text-sm font-bold text-black border border-[#D6ff01]/40"
       style={{
         background:
-          "linear-gradient(135deg, #D6ff01 0%, #b8dd00 100%)",
+          "linear-gradient(135deg,  0%, #b8dd00 100%)",
+          color:"#ffffff"
       }}
     >
       {n}

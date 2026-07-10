@@ -52,7 +52,7 @@ export default function Contact1() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-white/70 text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-white/15"
+            className="text-white/70 text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#D6ff01]"
             style={{
               background:
                 "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%)",
@@ -151,14 +151,15 @@ export default function Contact1() {
           <motion.div {...fadeUp(0.3)} className="flex justify-center mt-2">
             <motion.button
               type="submit"
-              whileHover={{ y: -3, boxShadow: "0 20px 40px rgba(255,255,255,0.15), inset 0 1px 0 rgba(255,255,255,0.8)" }}
+             whileHover={{ y: -3, boxShadow: "0 20px 40px rgba(214,255,1,0.25), inset 0 1px 0 rgba(214,255,1,0.8)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="px-12 sm:px-16 py-3.5 sm:py-4 rounded-xl text-white hover:bg-white hover:text-black transition-all duration-300  font-semibold text-sm sm:text-base cursor-pointer "
+              className="px-12 sm:px-16 py-3.5 sm:py-4 rounded-xl text-white hover:bg-[#D6ff01] hover:text-black  font-semibold text-sm sm:text-base cursor-pointer "
               style={{
                 fontFamily: "Inter, sans-serif",
-                boxShadow: "0 10px 28px rgba(255,255,255,0.1), inset 0 1px 0 rgba(255,255,255,0.9)",
+                boxShadow: "0 10px 28px rgba(214,255,1,0.15), inset 0 1px 0 rgba(214,255,1,0.9)",
                 letterSpacing: "0.04em",
+                border: "1px solid rgba(214,255,1,0.3)",
               }}
             >
               {submitted ? "✓ Thank You!" : "Submit Form"}

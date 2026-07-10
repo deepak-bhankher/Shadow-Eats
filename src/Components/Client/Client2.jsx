@@ -81,7 +81,8 @@ export default function Client2() {
             {...fadeUp(0.1)}
             className="text-white font-bold text-6xl sm:text-7xl md:text-8xl tracking-tight"
           >
-            2000+
+            2000
+            <span className="text-[#D6ff01]">+</span>
           </motion.span>
 
           <motion.p

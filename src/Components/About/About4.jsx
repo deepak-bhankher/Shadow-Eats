@@ -70,14 +70,14 @@ function FaqItem({ item, isOpen, onToggle }) {
     <div
       className="rounded-2xl overflow-hidden transition-all duration-300 h-fit"
       style={{
-        background: isOpen ? "rgba(214,255,1,0.08)" : "rgba(255,255,255,0.05)",
+        background: isOpen ? "rgba(255,255,255,0.1)" : "rgba(255,255,255,0.05)",
         backdropFilter: "blur(20px)",
         WebkitBackdropFilter: "blur(20px)",
         border: isOpen
-          ? "1px solid rgba(214,255,1,0.3)"
+          ? "1px solid rgba(255,255,255,0.2)"
           : "1px solid rgba(255,255,255,0.1)",
         boxShadow: isOpen
-          ? "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(214,255,1,0.15)"
+          ? "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.12)"
           : "0 4px 16px rgba(0,0,0,0.2)",
       }}
     >
@@ -91,7 +91,7 @@ function FaqItem({ item, isOpen, onToggle }) {
         <motion.span
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center border border-[#D6ff01]/40 text-[#D6ff01]"
+          className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center border border-white/25 text-white"
         >
           <FiPlus size={16} />
         </motion.span>
