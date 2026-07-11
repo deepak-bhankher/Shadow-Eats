@@ -4,6 +4,7 @@ import Home3 from '../Components/Home/Home3'
 import Home4 from '../Components/Home/Home4'
 import Home5 from '../Components/Home/Home5'
 import Home6 from '../Components/Home/Home6'
+import Home7 from '../Components/Home/Home7'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
     <Home5/>
       <Home4 />
       <Home6/>
+      <Home7/>
     </>
   )
 }

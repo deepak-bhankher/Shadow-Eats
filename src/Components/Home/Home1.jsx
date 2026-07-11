@@ -436,7 +436,7 @@ export default function Home1() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className=" text-white text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#D6ff01]/30"
           >
-            Restaurant Growth Partner
+            Restaurant Growth Partner Since 2021
           </motion.span>
 
           <motion.h1
