@@ -92,7 +92,7 @@ export default function Home4() {
                 border: "1px solid rgba(214,255,1,0.3)",
               }}
             >
-            +91 77770 24365
+            +91 95548-24365
             </motion.a>
         </motion.div>
       </div>

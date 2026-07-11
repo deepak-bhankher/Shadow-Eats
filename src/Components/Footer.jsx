@@ -26,8 +26,8 @@ const SOCIALS = [
 const CONTACTS = [
   {
     icon: FaWhatsapp,
-    text: "+91-77770-24-365",
-    href: "tel:7777024365",
+    text: "+91 95548-24365",
+    href: "tel:95548-24365",
   },
   {
     icon: HiOutlineMail,

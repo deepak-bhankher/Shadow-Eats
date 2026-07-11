@@ -3,6 +3,7 @@ import Home2 from '../Components/Home/Home2'
 import Home3 from '../Components/Home/Home3'
 import Home4 from '../Components/Home/Home4'
 import Home5 from '../Components/Home/Home5'
+import Home6 from '../Components/Home/Home6'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Home3 />
     <Home5/>
       <Home4 />
+      <Home6/>
     </>
   )
 }

@@ -418,7 +418,7 @@ export default function Home1() {
                     tone={it.tone}
                     size={iconSize}
                     depth={iconIdx % 2 === 0 ? 1 : 0}
-                    opacity={1}
+                    opacity={1} 
                     rotate={0}
                   />
                 </motion.div>
