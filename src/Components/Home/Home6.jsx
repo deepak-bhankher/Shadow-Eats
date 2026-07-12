@@ -7,13 +7,11 @@ import { MdImage } from "react-icons/md";
 const GALLERY_ITEMS = [
   { id: "r1a", src: "journy1.png", alt: "Team working together", row: 1, weight: 2 },
   { id: "r1b", src: "journy2.png", alt: "Founders at a client meet", row: 1, weight: 1 },
-  { id: "r1c", src: "journy7.png", alt: "Team collaborating on laptops", row: 1, weight: 1 },
+  { id: "r1c", src: "journy.png", alt: "Team collaborating on laptops", row: 1, weight: 1 },
 
   { id: "r2a", src: "journy4.png", alt: "Full team group photo", row: 2, weight: 1 },
   { id: "r2b", src: "journy6.png", alt: "Team discussion", row: 2, weight: 1 },
   { id: "r2c", src: "journy5.png", alt: "Working late at the desk", row: 2, weight: 2 },
-
-  { id: "r3a", src: "journy3.png", alt: "Team celebrating a win", row: 3, weight: 1 },
 ];
 
 function ImageTile({ item, weightClass = "flex-1" }) {
