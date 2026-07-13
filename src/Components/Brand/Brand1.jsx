@@ -81,9 +81,8 @@ export default function Brand1() {
           animate={{ opacity: 1, scaleX: 1 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           className="w-16 h-px"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent, rgba(232,185,95,0.7), transparent)",
+         style={{
+           background:"#D6ff01"
           }}
         />
 
