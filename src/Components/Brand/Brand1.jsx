@@ -9,9 +9,8 @@ export default function Brand1() {
         src="brand.png"
         alt="image"
         className="absolute inset-0 w-full h-full object-cover"
-      />
+      /> 
 
-      {/* dark overlay for text readability */}
       <div className="absolute inset-0 bg-black/55" />
       <div
         className="absolute inset-0"
@@ -114,4 +113,4 @@ export default function Brand1() {
       </div>
     </section>
   );
-}
+} 

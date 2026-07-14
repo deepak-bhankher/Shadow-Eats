@@ -134,8 +134,7 @@ export default function Home7() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-4 max-w-md text-[13px] sm:text-[15px] text-white/50 font-medium"
           >
-            Real moments from real workdays — no staged shoots, just the team
-            building, shipping, and celebrating together.
+          Crafting digital success through teamwork and innovation
           </motion.p>
         </div>
 
