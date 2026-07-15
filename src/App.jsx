@@ -9,6 +9,7 @@ import Brand from "./Pages/Brand";
 import Client from "./Pages/Client";
 import Contact from "./Pages/Contact";
 import FloatingWhatsApp from "./Components/FloatingWhatsApp";
+import Prices from "./Pages/Prices";
 
 
 function ScrollToTop() {
@@ -66,6 +67,14 @@ function AnimatedRoutes() {
           element={
             <PageWrapper>
               <Client />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/price"
+          element={
+            <PageWrapper>
+              <Prices/>
             </PageWrapper>
           }
         />

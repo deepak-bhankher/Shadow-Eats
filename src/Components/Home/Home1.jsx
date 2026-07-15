@@ -299,82 +299,61 @@ export default function Home1() {
                 ),
               },
               {
-                tone: "mcdonalds",
+                tone: "about",
                 icon: (
                   <img
-                    src="mcd2.png"
-                    alt="McDonald's"
+                    src="brand2.png"
+                    alt="about2"
                     className="w-full h-full object-contain"
                     draggable={false}
                   />
                 ),
               },
               {
-                tone: "subway",
+                tone: "about3",
                 icon: (
                   <img
-                    src="Subway.png"
-                    alt="subway's"
+                    src="brand3.png"
+                    alt="about3"
                     className="w-full h-full object-contain"
                     draggable={false}
                   />
                 ),
               },
               {
-                tone: "kfc",
+                tone: "about4",
                 icon: (
                   <img
-                    src="kfc.png"
-                    alt="KFC"
+                    src="brand4.png"
+                    alt="about4"
                     className="w-full h-full object-contain"
                     draggable={false}
                   />
                 ),
               },
               {
-                tone: "dominos",
+                tone: "about5",
                 icon: (
                   <img
-                    src="dominos.png"
-                    alt="Domino's"
+                    src="brand5.png"
+                    alt="about5"
                     className="w-full h-full object-contain"
                     draggable={false}
                   />
                 ),
               },
               {
-                tone: "startbucks",
+                tone: "about5",
                 icon: (
                   <img
-                    src="starbucks.png"
-                    alt="starbucks's"
+                    src="brand6.png"
+                    alt="about6"
                     className="w-full h-full object-contain"
                     draggable={false}
                   />
                 ),
               },
-              {
-                tone: "burgerking",
-                icon: (
-                  <img
-                    src="burger.png"
-                    alt="Burger King"
-                    className="w-full h-full object-contain"
-                    draggable={false}
-                  />
-                ),
-              },
-              {
-                tone: "pizzahut",
-                icon: (
-                  <img
-                    src="pizza-hut.png"
-                    alt="Pizza Hut"
-                    className="w-full h-full object-contain"
-                    draggable={false}
-                  />
-                ),
-              },
+             
             ];
 
             return icons.map((it, iconIdx) => {
