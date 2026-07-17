@@ -256,8 +256,13 @@ export default function Prices() {
           <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             Choose Your{" "}
             <span
-              style={{
-                backgroundImage: ACCENT_TEXT_GRADIENT,
+             style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 400,
+                fontStyle: "italic",
+                fontSize: "1.15em",
+                backgroundImage:
+                  "linear-gradient(90deg, #ffffff 0%, #a6a6a6 50%, #434343 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
