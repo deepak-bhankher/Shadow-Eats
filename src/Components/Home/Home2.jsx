@@ -46,18 +46,17 @@ function StepCard({ step, index }) {
       whileHover={{ y: -6 }}
       transition={{ duration: 0.3 }}
       className="relative flex flex-col h-full gap-5 p-6 sm:p-7 rounded-2xl border border-white/10
-        bg-white/[0.04] hover:bg-white/[0.07] hover:border-[#D6ff01]/30
-        transition-all duration-300"
+bg-white/[0.04]
+hover:bg-[#434343]/20
+hover:border-[#434343]
+transition-all duration-300"
     >
       {/* top row: icon + number */}
       <div className="flex items-center justify-between">
-        <div
-          className="w-11 h-11 rounded-xl flex items-center justify-center border border-[#D6ff01]/20"
-          
-        >
-          <Icon size={20}   className="text-white"/>
+        <div className="w-11 h-11 rounded-xl flex items-center justify-center border border-[#434343] bg-[#111111]">
+          <Icon size={20} className="text-white" />
         </div>
-        <span className="text-[#D6ff01]/40 text-xs font-semibold tracking-widest">
+        <span className="text-[#434343]  text-xs font-semibold tracking-widest">
           {step.number}
         </span>
       </div>
@@ -73,10 +72,16 @@ function StepCard({ step, index }) {
       <motion.button
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        className="mt-1 self-start px-5 py-2 rounded-lg text-white  font-semibold text-sm
-          border border-[#D6ff01] hover:bg-black 
-          shadow-[0_6px_18px_rgba(214,255,1,0.2)] hover:shadow-[0_8px_22px_rgba(214,255,1,0.3)]
-          transition-all duration-300 cursor-pointer"
+        className="mt-1 self-start px-5 py-2 rounded-lg
+  bg-[#434343]
+  text-white
+  font-semibold text-sm
+  border border-[#434343]
+  hover:bg-[#000000]
+  hover:border-white/20
+  shadow-[0_6px_18px_rgba(67,67,67,0.35)]
+  hover:shadow-[0_8px_22px_rgba(67,67,67,0.45)]
+  transition-all duration-300 cursor-pointer"
       >
         Explore
       </motion.button>

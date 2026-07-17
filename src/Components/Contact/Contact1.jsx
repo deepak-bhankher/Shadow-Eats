@@ -52,10 +52,10 @@ export default function Contact1() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-white text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#D6ff01]/30"
+            className="text-white text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#434343]"
             style={{
               background:
-                "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%)",
+                "linear-gradient(135deg, rgba(67,67,67,0.35) 0%, rgba(0,0,0,0.2) 100%)",
               backdropFilter: "blur(6px)",
             }}
           >
@@ -76,7 +76,8 @@ export default function Contact1() {
                 fontWeight: 400,
                 fontStyle: "italic",
                 fontSize: "1.15em",
-               background:"#D6ff01",
+                backgroundImage:
+                  "linear-gradient(90deg, #ffffff 0%, #a6a6a6 50%, #434343 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -92,7 +93,8 @@ export default function Contact1() {
             transition={{ duration: 0.6, delay: 0.28, ease: "easeOut" }}
             className="w-16 h-px"
             style={{
-             background:"#D6ff01",
+              background:
+                "linear-gradient(90deg, transparent, #434343, #ffffff, #434343, transparent)",
             }}
           />
 
@@ -151,20 +153,20 @@ export default function Contact1() {
           <motion.div {...fadeUp(0.3)} className="flex justify-center mt-2">
             <motion.button
               type="submit"
-             whileHover={{ y: -3, boxShadow: "0 20px 40px rgba(214,255,1,0.25), inset 0 1px 0 rgba(214,255,1,0.8)" }}
+              whileHover={{ y: -3, boxShadow: "0 20px 40px rgba(67,67,67,0.4), inset 0 1px 0 rgba(255,255,255,0.4)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="px-12 sm:px-16 py-3.5 sm:py-4 rounded-xl text-white hover:bg-[#D6ff01] hover:text-black  font-semibold text-sm sm:text-base cursor-pointer "
+              className="px-12 sm:px-16 py-3.5 sm:py-4 rounded-xl text-white hover:bg-[#434343] hover:text-white font-semibold text-sm sm:text-base cursor-pointer "
               style={{
                 fontFamily: "Inter, sans-serif",
-                boxShadow: "0 10px 28px rgba(214,255,1,0.15), inset 0 1px 0 rgba(214,255,1,0.9)",
+                boxShadow: "0 10px 28px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.15)",
                 letterSpacing: "0.04em",
-                border: "1px solid rgba(214,255,1,0.3)",
+                border: "1px solid rgba(67,67,67,0.6)",
               }}
             >
               {submitted ? "✓ Thank You!" : "Submit Form"}
             </motion.button>
-          </motion.div>
+          </motion.div> 
 
         </form>
       </section>

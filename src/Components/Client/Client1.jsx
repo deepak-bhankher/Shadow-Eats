@@ -26,10 +26,10 @@ export default function Client1() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-white text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#D6ff01]/30"
+          className="text-white text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#434343]"
           style={{
             background:
-              "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%)",
+              "linear-gradient(135deg, rgba(67,67,67,0.35) 0%, rgba(0,0,0,0.2) 100%)",
             backdropFilter: "blur(6px)",
           }}
         >
@@ -51,7 +51,8 @@ export default function Client1() {
               fontWeight: 400,
               fontStyle: "italic",
               fontSize: "1.15em",
-              background:"#D6ff01",
+              backgroundImage:
+                "linear-gradient(90deg, #ffffff 0%, #a6a6a6 50%, #434343 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -68,7 +69,8 @@ export default function Client1() {
           transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
           className="w-16 h-px"
           style={{
-           background:"#D6ff01",
+            background:
+              "linear-gradient(90deg, transparent, #434343, #ffffff, #434343, transparent)",
           }}
         />
 

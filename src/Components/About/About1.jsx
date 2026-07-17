@@ -23,9 +23,12 @@ export default function About1() {
       <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center gap-6">
         <motion.span
           {...fadeUp(0)}
-          className="text-white text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#D6ff01]/30"
-       
-          
+          className="text-white text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#434343]"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(67,67,67,0.35) 0%, rgba(0,0,0,0.2) 100%)",
+            backdropFilter: "blur(6px)",
+          }}
         >
           Smart Solutions · Stunning Design · Stronger Sales
         </motion.span>
@@ -42,7 +45,8 @@ export default function About1() {
               fontWeight: 400,
               fontStyle: "italic",
               fontSize: "1.15em",
-               background:"#D6ff01",
+              backgroundImage:
+                "linear-gradient(90deg, #ffffff 0%, #a6a6a6 50%, #434343 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -56,7 +60,8 @@ export default function About1() {
           {...fadeUp(0.25)}
           className="w-16 h-px mt-2"
           style={{
-           background:"#D6ff01"
+            background:
+              "linear-gradient(90deg, transparent, #434343, #ffffff, #434343, transparent)",
           }}
         />
       </div>

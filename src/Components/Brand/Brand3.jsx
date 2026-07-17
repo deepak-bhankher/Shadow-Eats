@@ -123,13 +123,13 @@ export default function Brand3() {
                 className="absolute inset-0"
                 style={{
                   background:
-                    "radial-gradient(55% 55% at 50% 50%, rgba(255,255,255,0.07) 0%, transparent 70%)",
+                    "radial-gradient(55% 55% at 50% 50%, rgba(67,67,67,0.15) 0%, transparent 70%)",
                 }}
               />
               <motion.img
                 src="india.png"
                 alt="India map - Shadow Eats brand presence"
-                className="relative w-full max-w-[300px] sm:max-w-[380px] object-contain drop-shadow-[0_0_40px_rgba(255,255,255,0.08)]"
+                className="relative w-full max-w-[300px] sm:max-w-[380px] object-contain drop-shadow-[0_0_40px_rgba(67,67,67,0.2)]"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               />
@@ -162,7 +162,8 @@ export default function Brand3() {
   250
   <span
     style={{
-      background:"#D6ff01",
+      backgroundImage:
+        "linear-gradient(90deg, #ffffff 0%, #a6a6a6 50%, #434343 100%)",
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
       backgroundClip: "text",

@@ -82,7 +82,17 @@ export default function Client2() {
             className="text-white font-bold text-6xl sm:text-7xl md:text-8xl tracking-tight"
           >
             2000
-            <span className="text-[#D6ff01]">+</span>
+            <span
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, #ffffff 0%, #a6a6a6 50%, #434343 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              +
+            </span>
           </motion.span>
 
           <motion.p

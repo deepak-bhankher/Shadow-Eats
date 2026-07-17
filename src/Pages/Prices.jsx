@@ -12,10 +12,14 @@ const fadeUp = (delay = 0) => ({
 
 const DURATIONS = ["1 mo", "3 mo", "6 mo", "12 mo"];
 
-const ACCENT = "#D6FF01";
+// Basic plan only ever runs on a single, fixed duration — no toggle needed.
+const BASIC_DURATION = "1 Month";
 
-// Baseline features shared by both plans — rendered with a check, except
-// "Priority Support" which carries a speed badge instead of a checkmark.
+const ACCENT = "#434343";
+const ACCENT_TEXT_GRADIENT =
+  "linear-gradient(90deg, #ffffff 0%, #a6a6a6 50%, #434343 100%)";
+
+
 const BASELINE_FEATURES = [
   { label: "Menu Score Update" },
   { label: "Dedicated Account Manager" },
@@ -58,7 +62,7 @@ function DurationToggle({ value, onChange, premium }) {
             key={d}
             onClick={() => onChange(d)}
             className={`relative py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-colors duration-200 ${
-              active ? "text-black" : "text-white/45 hover:text-white/70"
+              active ? "text-white" : "text-white/45 hover:text-white/70"
             }`}
           >
             {active && (
@@ -77,6 +81,18 @@ function DurationToggle({ value, onChange, premium }) {
   );
 }
 
+// Basic plan just shows its single fixed duration as a plain pill —
+// no interactive toggle since there's nothing to switch between.
+function FixedDurationBadge({ value }) {
+  return (
+    <div className="p-1 rounded-2xl bg-white/[0.04]">
+      <div className="py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-center text-black bg-white/90">
+        {value}
+      </div>
+    </div>
+  );
+}
+
 function FeatureRow({ label, available, badgeText, premium }) {
   return (
     <div className="flex items-center gap-3 py-2">
@@ -84,14 +100,14 @@ function FeatureRow({ label, available, badgeText, premium }) {
         <span
           className="shrink-0 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md"
           style={{
-            background: premium ? "rgba(214,255,1,0.18)" : "rgba(255,255,255,0.08)",
-            color: premium ? ACCENT : "rgba(255,255,255,0.5)",
+            background: premium ? "rgba(67,67,67,0.35)" : "rgba(255,255,255,0.08)",
+            color: premium ? "#ffffff" : "rgba(255,255,255,0.5)",
           }}
         >
           {badgeText}
         </span>
       ) : available ? (
-        <FiCheck className="shrink-0" size={17} style={{ color: ACCENT }} />
+        <FiCheck className="shrink-0" size={17} style={{ color: "#a6a6a6" }} />
       ) : (
         <FiX className="shrink-0 text-white/20" size={17} />
       )}
@@ -109,9 +125,10 @@ function FeatureRow({ label, available, badgeText, premium }) {
 function PlanCard({ plan }) {
   const isPremium = plan === "premium";
   const [duration, setDuration] = useState("1 mo");
+  const activeDuration = isPremium ? duration : BASIC_DURATION;
 
   const waMessage = encodeURIComponent(
-    `Hi Shadow Eats! I'm interested in the ${isPremium ? "Premium" : "Basic"} plan (${duration} plan). Could you share a custom quote?`
+    `Hi Shadow Eats! I'm interested in the ${isPremium ? "Premium" : "Basic"} plan (${activeDuration} plan). Could you share a custom quote?`
   );
 
   return (
@@ -122,13 +139,13 @@ function PlanCard({ plan }) {
       }`}
       style={{
         background: isPremium
-          ? "linear-gradient(160deg, rgba(214,255,1,0.14) 0%, rgba(20,20,20,0.95) 55%, rgba(0,0,0,0.98) 100%)"
+          ? "linear-gradient(160deg, rgba(67,67,67,0.28) 0%, rgba(20,20,20,0.95) 55%, rgba(0,0,0,0.98) 100%)"
           : "rgba(255,255,255,0.03)",
         border: isPremium
-          ? "1px solid rgba(214,255,1,0.4)"
+          ? "1px solid rgba(67,67,67,0.7)"
           : "1px solid rgba(255,255,255,0.08)",
         boxShadow: isPremium
-          ? "0 30px 90px rgba(214,255,1,0.12), inset 0 1px 0 rgba(255,255,255,0.08)"
+          ? "0 30px 90px rgba(67,67,67,0.25), inset 0 1px 0 rgba(255,255,255,0.08)"
           : "0 20px 60px rgba(0,0,0,0.4)",
       }}
     >
@@ -137,8 +154,8 @@ function PlanCard({ plan }) {
           className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-wide px-4 py-1.5 rounded-full whitespace-nowrap"
           style={{
             background: ACCENT,
-            color: "#0a0a0a",
-            boxShadow: "0 8px 24px rgba(214,255,1,0.45)",
+            color: "#ffffff",
+            boxShadow: "0 8px 24px rgba(67,67,67,0.6)",
           }}
         >
           <PiCrownSimpleFill size={13} />
@@ -163,7 +180,11 @@ function PlanCard({ plan }) {
         <span className="text-[11px] font-bold uppercase tracking-widest text-white/40">
           Subscription Duration
         </span>
-        <DurationToggle value={duration} onChange={setDuration} premium={isPremium} />
+        {isPremium ? (
+          <DurationToggle value={duration} onChange={setDuration} premium={isPremium} />
+        ) : (
+          <FixedDurationBadge value={BASIC_DURATION} />
+        )}
       </div>
 
       {/* CTA */}
@@ -175,15 +196,15 @@ function PlanCard({ plan }) {
         style={{
           background: "#0d0d0d",
           border: isPremium
-            ? "1px solid rgba(214,255,1,0.45)"
+            ? "1px solid rgba(67,67,67,0.7)"
             : "1px solid rgba(255,255,255,0.12)",
-          boxShadow: isPremium ? "0 0 0 1px rgba(214,255,1,0.08) inset" : "none",
+          boxShadow: isPremium ? "0 0 0 1px rgba(67,67,67,0.2) inset" : "none",
         }}
       >
         Custom Quote on WhatsApp
         <FiArrowRight
           size={16}
-          style={{ color: isPremium ? ACCENT : "rgba(255,255,255,0.7)" }}
+          style={{ color: isPremium ? "#a6a6a6" : "rgba(255,255,255,0.7)" }}
           className="transition-transform duration-200 group-hover:translate-x-1"
         />
       </a>
@@ -226,7 +247,7 @@ export default function Prices() {
             className="text-xs font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full"
             style={{
               color: "white",
-              border: "1px solid rgba(214,255,1,0.3)",
+              border: "1px solid rgba(67,67,67,0.6)",
             }}
           >
             Pricing Plans
@@ -234,7 +255,16 @@ export default function Prices() {
 
           <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             Choose Your{" "}
-            <span style={{ color: ACCENT }}>Growth Plan</span>
+            <span
+              style={{
+                backgroundImage: ACCENT_TEXT_GRADIENT,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Growth Plan
+            </span>
           </h1>
 
           <p className="text-white/50 text-sm sm:text-base md:text-lg max-w-xl">

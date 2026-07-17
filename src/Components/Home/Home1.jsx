@@ -4,7 +4,11 @@ import { FaStar } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const ACCENT = "#D6ff01";
+// New color combo (same as Navbar)
+const ACCENT = "#434343";
+const ACCENT_DARK = "#000000";
+const ACCENT_LIGHT = "#8a8a8a"; // lighter tint, used where visibility against a dark bg is needed
+const ACCENT_GRADIENT = `linear-gradient(180deg, ${ACCENT_DARK} 0%, ${ACCENT} 100%)`;
 
 function useResponsiveIconSize() {
   const [iconSize, setIconSize] = useState(44);
@@ -64,20 +68,20 @@ function GlassIconCard({
   rotate = 0,
 }) {
   const toneMap = {
-    swiggy: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
-    zomato: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
-    mcdonalds: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
-    subway: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
-    kfc: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
-    dominos: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
-    startbucks: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
-    burgerking: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
-    pizzahut: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
-    dunkin: { accent: "#D6ff01", accent2: "rgba(214,255,1,0.35)" },
+    swiggy: { accent: ACCENT, accent2: "rgba(67,67,67,0.35)" },
+    zomato: { accent: ACCENT, accent2: "rgba(67,67,67,0.35)" },
+    mcdonalds: { accent: ACCENT, accent2: "rgba(67,67,67,0.35)" },
+    subway: { accent: ACCENT, accent2: "rgba(67,67,67,0.35)" },
+    kfc: { accent: ACCENT, accent2: "rgba(67,67,67,0.35)" },
+    dominos: { accent: ACCENT, accent2: "rgba(67,67,67,0.35)" },
+    startbucks: { accent: ACCENT, accent2: "rgba(67,67,67,0.35)" },
+    burgerking: { accent: ACCENT, accent2: "rgba(67,67,67,0.35)" },
+    pizzahut: { accent: ACCENT, accent2: "rgba(67,67,67,0.35)" },
+    dunkin: { accent: ACCENT, accent2: "rgba(67,67,67,0.35)" },
   };
   const toneStyles = toneMap[tone] ?? {
-    accent: "#D6ff01",
-    accent2: "rgba(214,255,1,0.30)",
+    accent: ACCENT,
+    accent2: "rgba(67,67,67,0.30)",
   };
 
   return (
@@ -101,7 +105,7 @@ function GlassIconCard({
             "linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.90) 55%, rgba(255,255,255,0.85) 100%)",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
-          border: "1px solid rgba(214,255,1,0.4)",
+          border: "1px solid rgba(67,67,67,0.4)",
           boxShadow:
             depth > 0
               ? `0 18px 40px rgba(0,0,0,0.35), 0 0 24px ${toneStyles.accent2}`
@@ -113,7 +117,7 @@ function GlassIconCard({
         className="absolute inset-x-0 top-0 h-1/2 rounded-t-2xl"
         style={{
           background:
-            "radial-gradient(60% 90% at 50% -10%, rgba(214,255,1,0.35) 0%, rgba(255,255,255,0.4) 40%, transparent 70%)",
+            "radial-gradient(60% 90% at 50% -10%, rgba(67,67,67,0.35) 0%, rgba(255,255,255,0.4) 40%, transparent 70%)",
           borderTopLeftRadius: 12,
           borderTopRightRadius: 12,
         }}
@@ -175,17 +179,16 @@ function GlassButtonBase({
       whileTap={{ scale: 0.97, y: 1 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
       className="relative px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 flex gap-2 sm:gap-2.5 justify-center items-center rounded-full
-        text-sm sm:text-base font-semibold text-black cursor-pointer whitespace-nowrap
-        overflow-hidden border border-[#D6ff01]/40
-        shadow-[0_10px_26px_rgba(214,255,1,0.25)]
-        hover:shadow-[0_14px_32px_rgba(214,255,1,0.4)]
+        text-sm sm:text-base font-semibold text-white cursor-pointer whitespace-nowrap
+        overflow-hidden border border-[#434343]/60
+        shadow-[0_10px_26px_rgba(0,0,0,0.4)]
+        hover:shadow-[0_14px_32px_rgba(0,0,0,0.55)]
         transition-shadow duration-300"
       style={{
         background:
           hovered && hoverBackground
             ? hoverBackground
-            : (background ??
-              "linear-gradient(180deg, #D6ff01 0%, #b8dd00 100%)"),
+            : (background ?? ACCENT_GRADIENT),
       }}
     >
       <span
@@ -251,12 +254,12 @@ export default function Home1() {
         }}
       />
 
-      {/* subtle lime ambient glow behind hero content */}
+      {/* subtle ambient glow behind hero content */}
       <div
   className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full"
   style={{
     background:
-      "radial-gradient(closest-side, rgba(214,255,1,0), transparent 70%)",
+      "radial-gradient(closest-side, rgba(67,67,67,0), transparent 70%)",
   }}
 />
 
@@ -270,7 +273,7 @@ export default function Home1() {
           >
             <path
               d="M20 20 C 20 500, 280 620, 550 620 C 820 620, 1080 500, 1080 20"
-              stroke="#D6ff0155"
+              stroke="#8a8a8a55"
               strokeWidth="2"
             />
           </svg>
@@ -413,7 +416,7 @@ export default function Home1() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className=" text-white text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#D6ff01]/30"
+            className=" text-white text-xs sm:text-sm font-medium tracking-[0.25em] uppercase px-4 py-1.5 rounded-full border border-[#8a8a8a]/40"
           >
             Restaurant Growth Partner Since 2021
           </motion.span>
@@ -433,7 +436,7 @@ export default function Home1() {
                 style={{
                   fontFamily: "'Instrument Serif', serif",
                   background:
-                    "linear-gradient(180deg, #eaff66 0%, #D6ff01 55%, #a8cc00 100%)",
+                    "linear-gradient(180deg, #cfcfcf 0%, #8a8a8a 55%, #434343 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -447,7 +450,7 @@ export default function Home1() {
                 style={{
                   fontFamily: "'Instrument Serif', serif",
                   background:
-                    "linear-gradient(180deg, #eaff66 0%, #D6ff01 55%, #a8cc00 100%)",
+                    "linear-gradient(180deg, #cfcfcf 0%, #8a8a8a 55%, #434343 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -465,8 +468,8 @@ export default function Home1() {
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
             className="mt-5 sm:mt-6 w-16 h-px"
             style={{
-              background: "#D6ff01",
-              boxShadow: "0 0 12px rgba(214,255,1,0.6)",
+              background: ACCENT_LIGHT,
+              boxShadow: "0 0 12px rgba(138,138,138,0.6)",
             }}
           />
 

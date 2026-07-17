@@ -12,7 +12,7 @@ const marqueeImages = [...images, ...images, ...images];
 
 export default function Home4() {
   return (
-    <section className="relative bg-[#0a0a0a] text-white py-24 sm:py-32 overflow-hidden">
+    <section className="relative bg-[#000000] text-white py-24 sm:py-32 overflow-hidden">
 
       {/* subtle radial glow bg */}
       <div
@@ -23,13 +23,13 @@ export default function Home4() {
       {/* ── Heading ── */}
       <div className="relative max-w-4xl mx-auto flex flex-col items-center text-center px-6">
         <motion.div {...fadeUp(0)} className="flex flex-col items-center gap-3">
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#D6ff01]/60">
+          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#434343]/60">
             Press &amp; Media
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white">
             In the News
           </h1>
-          <div className="w-8 h-px bg-[#D6ff01]/40 mt-1" />
+          <div className="w-8 h-px bg-[#434343] mt-1" />
         </motion.div>
       </div>
 
@@ -47,11 +47,12 @@ export default function Home4() {
             {marqueeImages.map((img, i) => (
               <div
                 key={i}
-                className="shrink-0 flex items-center justify-center rounded-2xl"
+                className="shrink-0 flex items-center justify-center rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#1a1a1a]"
                 style={{
-                  padding: "22px 32px",
-                  
-                  border: "1px solid rgba(214,255,1,0.12)",
+                  padding: "22px 32px", 
+                   background: "#111111",
+  border: "1px solid #434343",
+  boxShadow: "0 10px 30px rgba(67,67,67,.18)",
                  
                 }}
               >
@@ -73,7 +74,7 @@ export default function Home4() {
           {...fadeUp(0.2)}
           className="mt-24 sm:mt-32 flex flex-col items-center gap-5"
         >
-          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#D6ff01]/60">
+          <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#434343]/60">
             Get in Touch
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white">
@@ -81,19 +82,29 @@ export default function Home4() {
           </h2>
 
           <motion.a
-              whileHover={{ y: -3, boxShadow: "0 20px 40px rgba(214,255,1,0.25), inset 0 1px 0 rgba(214,255,1,0.8)" }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="px-12 sm:px-16 py-3.5 sm:py-4 rounded-xl text-white hover:bg-[#D6ff01] hover:text-black  font-semibold text-sm sm:text-base cursor-pointer "
-              style={{
-                fontFamily: "Inter, sans-serif",
-                boxShadow: "0 10px 28px rgba(214,255,1,0.15), inset 0 1px 0 rgba(214,255,1,0.9)",
-                letterSpacing: "0.04em",
-                border: "1px solid rgba(214,255,1,0.3)",
-              }}
-            >
-            +91 95548-24365
-            </motion.a>
+  whileHover={{
+    y: -3,
+    backgroundColor: "#434343",
+    boxShadow: "0 20px 40px rgba(67,67,67,.35)",
+  }}
+  whileTap={{ scale: 0.97 }}
+  transition={{ duration: 0.3 }}
+  className="px-12 sm:px-16 py-3.5 sm:py-4 rounded-xl
+  text-white
+  font-semibold
+  text-sm sm:text-base
+  cursor-pointer
+  bg-[#000000]
+  border border-[#434343]
+  hover:border-white/20"
+  style={{
+    fontFamily: "Inter, sans-serif",
+    letterSpacing: "0.04em",
+    boxShadow: "0 10px 28px rgba(67,67,67,.25)",
+  }}
+>
+  +91 95548-24365
+</motion.a>
         </motion.div>
       </div>
 

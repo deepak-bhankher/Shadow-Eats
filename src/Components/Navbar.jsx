@@ -16,7 +16,12 @@ const NAV_LINKS = [
 
 const PHONE_NUMBER = "+91 95548 24365";
 const PHONE_HREF = "tel:+919554824365";
-const ACCENT = "#D6FF01";
+
+// New color combo
+const ACCENT = "#434343";
+const ACCENT_DARK = "#000000";
+const ACCENT_LIGHT = "#b5b5b5"; // lighter tint for legible hover text on black
+const ACCENT_GRADIENT = `linear-gradient(180deg, ${ACCENT_DARK} 0%, ${ACCENT} 100%)`;
 
 function NavItem({ label, path }) {
   const { pathname } = useLocation();
@@ -39,9 +44,8 @@ function NavItem({ label, path }) {
             transition={{ duration: 0.15 }}
             className="absolute inset-0 rounded-lg"
             style={{
-              background:
-                "#fffff",
-              border: "1px #ffffff solid",
+              background: ACCENT_GRADIENT,
+              border: `1px solid ${ACCENT}`,
               boxShadow:
                 "inset 0 1px 0 rgba(255,255,255,0.25), 0 4px 12px rgba(0,0,0,0.25)",
             }}
@@ -70,14 +74,12 @@ function CtaButton() {
       whileTap={{ scale: 0.97 }}
       className="relative px-5 py-2 flex gap-2 items-center rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 overflow-hidden"
       style={{
-        background: hovered
-          ? "#000000"
-          : "linear-gradient(180deg, #D6FF01 0%, #b8dd00 100%)",
-        color: hovered ? ACCENT : "#000000",
-        border: "1px solid rgba(214,255,1,0.9)",
+        background: hovered ? ACCENT_DARK : ACCENT_GRADIENT,
+        color: hovered ? ACCENT_LIGHT : "#ffffff",
+        border: `1px solid ${ACCENT}`,
         boxShadow: hovered
-          ? "inset 0 1px 0 rgba(214,255,1,0.2)"
-          : "0 6px 20px rgba(214,255,1,0.35), inset 0 1px 0 rgba(255,255,255,0.5)",
+          ? `inset 0 1px 0 rgba(96,125,139,0.25)`
+          : "0 6px 20px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.25)",
         transition:
           "background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
       }}
@@ -251,7 +253,7 @@ export default function Navbar() {
                     className="list-none"
                   >
                     <Link to={link.path} onClick={() => setOpen(false)}>
-                      <div className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-white/60 hover:text-white hover:bg-white/8 hover:border hover:border-[#D6FF01]/30 transition-all duration-200">
+                      <div className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-white/60 hover:text-white hover:bg-white/8 hover:border hover:border-[#434343]/60 transition-all duration-200">
                         <span className="w-1 h-1 rounded-full bg-white/30 shrink-0" />
                         {link.name}
                       </div>
@@ -267,12 +269,12 @@ export default function Navbar() {
                 >
                   <a href={PHONE_HREF} onClick={() => setOpen(false)}>
                     <button
-                      className="w-full flex justify-center items-center gap-2 py-3 px-6 rounded-xl cursor-pointer text-sm font-semibold text-black transition-all duration-300"
+                      className="w-full flex justify-center items-center gap-2 py-3 px-6 rounded-xl cursor-pointer text-sm font-semibold text-white transition-all duration-300"
                       style={{
-                        background:
-                          "linear-gradient(180deg, #D6FF01 0%, #b8dd00 100%)",
+                        background: ACCENT_GRADIENT,
+                        border: `1px solid ${ACCENT}`,
                         boxShadow:
-                          "0 6px 18px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.6)",
+                          "0 6px 18px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.25)",
                       }}
                     >
                       <FaPhoneAlt size={13} />

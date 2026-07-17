@@ -119,8 +119,15 @@ export default function Home7() {
             <span
               className="italic font-light"
               style={{
-                fontFamily: "'Instrument Serif', serif",
-                color: "#D6FF01",
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 400,
+                fontStyle: "italic",
+                fontSize: "1.15em",
+                backgroundImage:
+                  "linear-gradient(90deg, #ffffff 0%, #a6a6a6 50%, #434343 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
               }}
             >
               Journey

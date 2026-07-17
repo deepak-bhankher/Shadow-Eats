@@ -9,7 +9,7 @@ import {
 import { HiOutlineMail, HiOutlineLocationMarker } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
-const ACCENT = "#D6FF01";
+const ACCENT = "#434343";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -58,8 +58,8 @@ export default function Footer() {
   return (
     <footer className="relative bg-black text-white px-6 sm:px-10 pt-20 sm:pt-24 pb-8 overflow-hidden">
       {/* ambient glow accents */}
-      <div className="pointer-events-none absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#D6FF01]/[0.06] blur-[120px]" />
-      <div className="pointer-events-none absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-gradient-to-br from-yellow-500/[0.08] to-transparent blur-[120px]" />
+      <div className="pointer-events-none absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#434343]/20 blur-[120px]" />
+      <div className="pointer-events-none absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-[#434343]/15 blur-[120px]" />
 
       <div className="relative max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
@@ -69,7 +69,7 @@ export default function Footer() {
               className="text-3xl sm:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r"
               style={{
                 backgroundImage:
-                  "linear-gradient(90deg, #ffffff 0%, #F5D67B 50%, #B8860B 100%)",
+                  "linear-gradient(90deg, #ffffff 0%, #a6a6a6 55%, #434343 100%)",
               }}
             >
               Shadow Eats
@@ -97,9 +97,13 @@ export default function Footer() {
                     transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 rounded-full bg-[#D6FF01] text-black flex items-center justify-center
-                      shadow-[0_4px_14px_rgba(214,255,1,0.25)] hover:shadow-[0_6px_20px_rgba(214,255,1,0.45)]
-                      transition-shadow duration-300"
+                    className="w-10 h-10 rounded-full w-10 h-10 rounded-full bg-[#111111] border border-[#434343]
+text-white
+flex items-center justify-center
+shadow-[0_4px_14px_rgba(67,67,67,.25)]
+hover:bg-[#434343]
+hover:border-white/20
+transition-all duration-300"
                   >
                     <Icon size={16} />
                   </motion.a>
@@ -111,7 +115,7 @@ export default function Footer() {
           {/* Quick Links column */}
           <motion.div {...fadeUp(0.1)} className="md:col-span-3">
             <h3 className="text-lg sm:text-xl font-semibold flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#D6FF01] inline-block" />
+              <span className="w-2 h-2 rounded-full bg-[#434343] inline-block" />
               Quick Links
             </h3>
 
@@ -128,7 +132,7 @@ export default function Footer() {
                     to={l.to}
                     className="group inline-flex items-center gap-2 text-gray-400 hover:text-white text-sm sm:text-base transition-colors duration-200"
                   >
-                    <span className="h-px w-0 bg-[#D6FF01] group-hover:w-4 transition-all duration-300" />
+                    <span className="h-px w-0 bg-[#434343] group-hover:w-4 transition-all duration-300" />
                     {l.label}
                   </Link>
                 </motion.li>
@@ -139,7 +143,7 @@ export default function Footer() {
           {/* Get in touch column */}
           <motion.div {...fadeUp(0.2)} className="md:col-span-4">
             <h3 className="text-lg sm:text-xl font-semibold flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#D6FF01] inline-block" />
+              <span className="w-2 h-2 rounded-full bg-[#434343] inline-block" />
               Get in touch
             </h3>
 
@@ -148,10 +152,10 @@ export default function Footer() {
                 const Icon = c.icon;
                 const content = (
                   <>
-                    <span className="w-9 h-9 shrink-0 rounded-full border border-white/15 bg-white/[0.02] backdrop-blur-sm flex items-center justify-center group-hover:border-[#D6FF01] group-hover:bg-[#D6FF01]/10 transition-all duration-300">
+                    <span className="w-9 h-9 shrink-0 rounded-full border border-white/15 bg-white/[0.02] backdrop-blur-sm flex items-center justify-center group-hover:border-[#434343] group-hover:bg-[#434343]/20 transition-all duration-300">
                       <Icon
                         size={16}
-                        className="text-white group-hover:text-[#D6FF01] transition-colors duration-300"
+                        className="text-white group-hover:text-white transition-colors duration-300"
                       />
                     </span>
                     <span className="text-gray-400 group-hover:text-white transition-all cursor-pointer duration-300 text-sm sm:text-base leading-snug">
@@ -176,7 +180,9 @@ export default function Footer() {
                         {content}
                       </a>
                     ) : (
-                      <div className="flex items-start gap-3 group">{content}</div>
+                      <div className="flex items-start gap-3 group">
+                        {content}
+                      </div>
                     )}
                   </motion.div>
                 );
@@ -185,7 +191,7 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* divider — gold to lime gradient */}
+        {/* divider — grey to black gradient */}
         <motion.div
           initial={{ scaleX: 0, opacity: 0 }}
           whileInView={{ scaleX: 1, opacity: 1 }}
@@ -194,7 +200,7 @@ export default function Footer() {
           className="mt-14 sm:mt-16 h-px w-full origin-left"
           style={{
             backgroundImage:
-              "linear-gradient(90deg, transparent, #B8860B33, #D6FF0155, #B8860B33, transparent)",
+              "linear-gradient(90deg, transparent, #434343, #777777, #434343, transparent)",
           }}
         />
 
@@ -244,7 +250,7 @@ export default function Footer() {
         transition={{ duration: 0.4 }}
         className="absolute top-8 right-6 sm:right-10 w-10 h-10 cursor-pointer rounded-full border border-white/15
           bg-white/[0.03] backdrop-blur-sm flex items-center justify-center
-          hover:border-[#D6FF01] hover:bg-[#D6FF01]/10 transition-all duration-300"
+          hover:border-[#434343] hover:bg-[#434343]/10 transition-all duration-300"
       >
         <FaArrowUp size={13} className="text-white " />
       </motion.button>

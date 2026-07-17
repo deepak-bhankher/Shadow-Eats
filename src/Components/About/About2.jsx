@@ -61,11 +61,11 @@ function NumberBadge({ n, delay = 0 }) {
   return (
     <motion.span
       {...fadeIn(delay)}
-      className="inline-flex items-center justify-center w-9 h-9 rounded-lg text-sm font-bold text-black border border-[#D6ff01]/40"
+      className="inline-flex items-center justify-center w-9 h-9 rounded-lg text-sm font-bold text-white border border-[#434343]"
       style={{
         background:
-          "linear-gradient(135deg,  0%, #b8dd00 100%)",
-          color:"#ffffff"
+          "linear-gradient(135deg, #434343 0%, #000000 100%)",
+        color: "#ffffff",
       }}
     >
       {n}
@@ -81,10 +81,10 @@ function ImageCard({ card, index }) {
       whileHover={{
         y: -6,
         boxShadow:
-          "0 0 0 1px rgba(214,255,1,0.25), 0 20px 40px rgba(0,0,0,0.5)",
+          "0 0 0 1px rgba(67,67,67,0.5), 0 20px 40px rgba(0,0,0,0.5)",
       }}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-      className="flex flex-col gap-4 p-4 sm:p-5 rounded-2xl border border-white/10 bg-white/[0.03] transition-colors duration-300 hover:bg-white/[0.06] hover:border-[#D6ff01]/25"
+      className="flex flex-col gap-4 p-4 sm:p-5 rounded-2xl border border-white/10 bg-white/[0.03] transition-colors duration-300 hover:bg-white/[0.06] hover:border-[#434343]/60"
     >
       <motion.div
         className="w-full h-44 sm:h-48 rounded-xl overflow-hidden border border-white/10"

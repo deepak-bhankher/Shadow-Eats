@@ -56,10 +56,10 @@ function TestimonialCard({ item }) {
       style={{
         background: "linear-gradient(145deg, #1a1a1a 0%, #111 100%)",
         border: hovered
-          ? "1px solid rgba(255,255,255,0.35)"
+          ? "1px solid rgba(67,67,67,0.7)"
           : "1px solid rgba(255,255,255,0.07)",
         boxShadow: hovered
-          ? "0 0 0 1px rgba(255,255,255,0.12), 0 24px 70px rgba(255,255,255,0.08), 0 8px 32px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.1)"
+          ? "0 0 0 1px rgba(67,67,67,0.3), 0 24px 70px rgba(67,67,67,0.15), 0 8px 32px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.1)"
           : "0 24px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05)",
         transition: "border 0.3s ease, box-shadow 0.3s ease",
       }}
@@ -70,7 +70,7 @@ function TestimonialCard({ item }) {
       {/* stars */}
       <div className="flex gap-1 -mt-2">
         {Array.from({ length: item.stars }).map((_, i) => (
-          <FiStar key={i} size={13} className="fill-white text-[#D6ff01]" />
+          <FiStar key={i} size={13} className="fill-white text-[#434343]" />
         ))}
       </div>
 
@@ -117,9 +117,9 @@ export default function Client3() {
           <span
             className="text-xs font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full"
             style={{
-              background: "rgba(255,255,255,0.08)",
+              background: "rgba(67,67,67,0.2)",
               color: "#fff",
-              border: "1px solid rgba(255,255,255,0.15)",
+              border: "1px solid rgba(67,67,67,0.5)",
             }}
           >
             Client Love

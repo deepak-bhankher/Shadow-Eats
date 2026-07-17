@@ -88,7 +88,17 @@ export default function Home6() {
               className="absolute inset-x-[-6px] top-[18%] bottom-[6%] -rotate-1 rounded-lg"
               style={{ background: "#0a0a0a" }}
             />
-            <span className="relative px-2" style={{ color: "#D6FF01" }}>
+            <span className="relative px-2" style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 400,
+                fontStyle: "italic",
+                fontSize: "1.15em",
+                backgroundImage:
+                  "linear-gradient(90deg, #ffffff 0%, #a6a6a6 50%, #434343 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}>
               Journey
             </span>
           </span>
