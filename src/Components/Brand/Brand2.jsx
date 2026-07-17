@@ -112,7 +112,7 @@ export default function Brand2() {
             {...fadeUp(0.1)}
             className="text-white text-2xl sm:text-3xl font-semibold text-center mb-10 sm:mb-12"
           >
-            Brands We've Worked With
+            Our Brand
           </motion.h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">

@@ -5,64 +5,48 @@ import { FiPlus } from "react-icons/fi";
 const FAQS = [
   {
     q: "What happens if Shadow Eats decides to open an additional outlet in my location?",
-    a: "We coordinate closely with existing franchise partners to ensure fair territory planning and avoid unnecessary overlap that could impact your business.",
+    a: "Shadow Eats carefully plans franchise territories to avoid unnecessary overlap. If expansion is required, we work closely with existing partners to ensure fair business opportunities for everyone.",
   },
   {
     q: "What will be the payment cycle?",
-    a: "Payouts follow a fixed monthly cycle, with clear settlement statements shared for every order processed through the platforms.",
+    a: "Payments are settled on a fixed weekly or monthly cycle, depending on the platform. Complete settlement reports are shared for full transparency.",
   },
   {
     q: "Who pays the Zomato/Swiggy commissions and discounts?",
-    a: "Platform commissions and discounts are factored into the pricing structure and managed as part of the overall franchise agreement.",
+    a: "Platform commissions and promotional discounts are managed according to the franchise agreement, ensuring complete transparency in settlements.",
   },
   {
     q: "Does Shadow Eats charge any additional fees for ads or promotions?",
-    a: "Any promotional or ad spend is transparently communicated in advance, with no hidden charges added later.",
+    a: "No hidden charges are applied. Any marketing or promotional campaigns are discussed with partners beforehand and executed only with mutual agreement.",
   },
   {
     q: "What types of cuisine does Shadow Eats offer in its brands?",
-    a: "Our brand portfolio spans North Indian, Chinese, Mughlai, Biryani, and more, giving partners flexibility based on local demand.",
+    a: "Our brands cover a wide variety of cuisines including North Indian, Chinese, Mughlai, Biryani, Fast Food, Rolls, Pizza, and more, based on market demand.",
   },
   {
     q: "How can I become a Franchise Partner of Shadow Eats Brands?",
-    a: "You can apply through our franchise application process, after which our team reviews your location and profile before moving to onboarding.",
+    a: "Simply contact our franchise team, share your location details, and complete the application process. Our team will evaluate your location and guide you through onboarding.",
   },
   {
     q: "Can I run my own brand along with Shadow Eats Brands?",
-    a: "Yes, many partners operate their own brand alongside a Shadow Eats virtual brand to maximize kitchen utilization.",
+    a: "Yes. Existing restaurant owners can continue operating their own brand while adding Shadow Eats brands to maximize kitchen utilization and revenue.",
   },
   {
     q: "Is the franchise menu fixed, or can we customize it?",
-    a: "The core menu is standardized for brand consistency, but we do accommodate limited local customization where it makes sense.",
+    a: "Our signature menu remains standardized to maintain quality and consistency. However, selected items may be customized based on local customer preferences after approval.",
   },
   {
     q: "What training support is provided by Shadow Eats?",
-    a: "We provide hands-on Chef Training Unit sessions covering recipes, plating, and kitchen workflow to ensure consistent quality.",
+    a: "We provide complete chef training, recipe guidance, SOPs, kitchen setup assistance, packaging standards, and ongoing operational support.",
   },
   {
     q: "What is the duration of the franchise agreement?",
-    a: "Franchise agreements are typically structured for a fixed multi-year term, with renewal options discussed closer to expiry.",
+    a: "The franchise agreement is generally signed for multiple years with renewal options available based on mutual agreement.",
   },
   {
     q: "What are the franchise charges?",
-    a: "Franchise charges vary based on brand and setup requirements, and are shared in detail during the application and approval stage.",
-  },
-  {
-    q: "Is there a royalty in the franchise model?",
-    a: "Yes, a royalty is applicable as part of the ongoing brand usage and support provided throughout the partnership.",
-  },
-  {
-    q: "Why is royalty charged?",
-    a: "Royalty covers continued access to the brand, menu updates, marketing support, and platform management provided by Shadow Eats.",
-  },
-  {
-    q: "Does Shadow Eats handle sales growth and management support?",
-    a: "Yes, our team actively works on pricing strategy, visibility optimization, and performance tracking to help grow your sales.",
-  },
-  {
-    q: "Does Shadow Eats provide support whenever needed?",
-    a: "Yes, ongoing support is available throughout the partnership, from operational queries to platform-related assistance.",
-  },
+    a: "Franchise investment depends on the selected brand and business model. Our team shares a complete pricing structure during the consultation process.",
+  }
 ];
 
 function FaqItem({ item, isOpen, onToggle }) {
