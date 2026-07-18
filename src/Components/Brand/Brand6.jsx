@@ -46,6 +46,22 @@ const FAQS = [
   {
     q: "What are the franchise charges?",
     a: "Franchise investment depends on the selected brand and business model. Our team shares a complete pricing structure during the consultation process.",
+  },
+    {
+    q: "Is there a royalty in the franchise model?",
+    a: "Yes. A nominal royalty is charged as per the franchise agreement. This helps us provide continuous brand support, operational guidance, marketing assistance, and business development services.",
+  },
+  {
+    q: "Why is royalty charged?",
+    a: "Royalty is charged to maintain brand standards, provide ongoing operational support, marketing strategies, menu updates, technology improvements, and continuous business growth assistance.",
+  },
+  {
+    q: "Does Shadow Eats handle sales growth and management support?",
+    a: "Yes. Shadow Eats actively supports franchise partners with sales strategies, online platform optimization, marketing campaigns, operational guidance, and performance monitoring to help maximize business growth.",
+  },
+  {
+    q: "Does Shadow Eats provide support whenever needed?",
+    a: "Absolutely. Our dedicated support team is always available to assist franchise partners with operational queries, technical guidance, marketing support, and day-to-day business requirements whenever needed.",
   }
 ];
 
