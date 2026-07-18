@@ -72,7 +72,7 @@ function CtaButton() {
       onMouseLeave={() => setHovered(false)}
       whileHover={{ scale: 1.04, y: -1 }}
       whileTap={{ scale: 0.97 }}
-      className="relative px-5 py-2 flex gap-2 items-center rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 overflow-hidden"
+      className="relative px-5 py-2 flex gap-2 items-center rounded-lg cursor-pointer transition-all duration-300 overflow-hidden"
       style={{
         background: "#000000",
         color: "#ffffff",
@@ -84,7 +84,17 @@ function CtaButton() {
           "background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
       }}
     >
-      <span className="relative z-10 flex items-center gap-2">
+      <span
+        className="relative z-10 flex items-center gap-2"
+        style={{
+          fontFamily:
+            "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif",
+          fontSize: "14px",
+          fontWeight: 600,
+          letterSpacing: "0.03em",
+          fontVariantNumeric: "tabular-nums",
+        }}
+      >
         <motion.span
           animate={
             hovered ? { rotate: [0, -15, 15, -10, 10, 0] } : { rotate: 0 }
@@ -99,7 +109,6 @@ function CtaButton() {
     </motion.a>
   );
 }
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -125,9 +134,7 @@ export default function Navbar() {
               : "backdrop-blur-lg backdrop-saturate-125"
           }`}
           style={{
-            background: scrolled
-              ? "rgba(0,0,0,0.7)"
-              : "rgba(0,0,0,0.55)",
+            background: scrolled ? "rgba(0,0,0,0.7)" : "rgba(0,0,0,0.55)",
             border: "1px solid rgba(67,67,67,0.5)",
             boxShadow: scrolled
               ? "0 12px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(60,60,60,0.3), inset 0 -1px 0 rgba(0,0,0,0.4)"
@@ -268,12 +275,18 @@ export default function Navbar() {
                 >
                   <a href={PHONE_HREF} onClick={() => setOpen(false)}>
                     <button
-                      className="w-full flex justify-center items-center gap-2 py-3 px-6 rounded-xl cursor-pointer text-sm font-semibold text-[#ffffff] transition-all duration-300"
+                      className="w-full flex justify-center items-center gap-2 py-3 px-6 rounded-xl cursor-pointer text-[#ffffff] transition-all duration-300"
                       style={{
                         background: "#000000",
                         border: `1px solid ${ACCENT}`,
                         boxShadow:
                           "0 6px 18px rgba(0,0,0,0.6), inset 0 1px 0 rgba(60,60,60,0.3)",
+                        fontFamily:
+                          "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif",
+                        fontSize: "14px",
+                        fontWeight: 600,
+                        letterSpacing: "0.03em",
+                        fontVariantNumeric: "tabular-nums",
                       }}
                     >
                       <FaPhoneAlt size={13} />
