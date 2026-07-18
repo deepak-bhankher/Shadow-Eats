@@ -18,9 +18,9 @@ const PHONE_NUMBER = "+91 95548 24365";
 const PHONE_HREF = "tel:+919554824365";
 
 // New color combo
-const ACCENT = "#5a5a5a";
-const ACCENT_DARK = "#1a1a1a";
-const ACCENT_LIGHT = "#f2f2f2";
+const ACCENT = "#434343";
+const ACCENT_DARK = "#000000";
+const ACCENT_LIGHT = "#b5b5b5";
 const ACCENT_GRADIENT = `linear-gradient(180deg, ${ACCENT_DARK} 0%, ${ACCENT} 100%)`;
 
 function NavItem({ label, path }) {
@@ -44,18 +44,16 @@ function NavItem({ label, path }) {
             transition={{ duration: 0.15 }}
             className="absolute inset-0 rounded-lg"
             style={{
-              background:
-                "linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.25) 100%)",
-              border: "1px solid rgba(255,255,255,0.6)",
+              background: ACCENT_GRADIENT,
+              border: `1px solid ${ACCENT}`,
               boxShadow:
-                "inset 0 1px 0 rgba(255,255,255,0.6), 0 4px 14px rgba(0,0,0,0.12)",
-              backdropFilter: "blur(6px)",
+                "inset 0 1px 0 rgba(255,255,255,0.25), 0 4px 12px rgba(0,0,0,0.25)",
             }}
           />
         )}
       </AnimatePresence>
       <motion.span
-        animate={{ color: active ? "#1a1a1a" : "#2b2b2b" }}
+        animate={{ color: "#ffffff" }}
         transition={{ duration: 0.2 }}
         className="relative text-[13px] lg:text-sm font-medium tracking-wide whitespace-nowrap"
       >
@@ -77,11 +75,11 @@ function CtaButton() {
       className="relative px-5 py-2 flex gap-2 items-center rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 overflow-hidden"
       style={{
         background: hovered ? ACCENT_DARK : ACCENT_GRADIENT,
-        color: "#ffffff",
+        color: hovered ? ACCENT_LIGHT : "#ffffff",
         border: `1px solid ${ACCENT}`,
         boxShadow: hovered
-          ? "inset 0 1px 0 rgba(255,255,255,0.25)"
-          : "0 6px 18px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.3)",
+          ? "inset 0 1px 0 rgba(96,125,139,0.25)"
+          : "0 6px 20px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.25)",
         transition:
           "background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
       }}
@@ -124,16 +122,16 @@ export default function Navbar() {
           className={`relative max-w-5xl mx-auto rounded-2xl px-5 overflow-hidden transition-all duration-500 ${
             scrolled
               ? "backdrop-blur-2xl backdrop-saturate-150"
-              : "backdrop-blur-xl backdrop-saturate-125"
+              : "backdrop-blur-lg backdrop-saturate-125"
           }`}
           style={{
             background: scrolled
-              ? "linear-gradient(180deg, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.14) 100%), rgba(255,255,255,0.28)"
-              : "linear-gradient(180deg, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0.08) 100%), rgba(255,255,255,0.16)",
-            border: "1px solid rgba(255,255,255,0.55)",
+              ? "linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.05) 100%), rgba(10,10,10,0.5)"
+              : "linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.03) 100%), rgba(10,10,10,0.28)",
+            border: "1px solid rgba(255,255,255,0.18)",
             boxShadow: scrolled
-              ? "0 12px 36px rgba(0,0,0,0.14), inset 0 1px 0 rgba(255,255,255,0.7), inset 0 -1px 0 rgba(255,255,255,0.15)"
-              : "0 6px 20px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.55)",
+              ? "0 12px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(255,255,255,0.04)"
+              : "0 6px 24px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.15)",
           }}
         >
           {/* top sheen highlight */}
@@ -141,24 +139,23 @@ export default function Navbar() {
             className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-2xl"
             style={{
               background:
-                "radial-gradient(60% 100% at 50% 0%, rgba(255,255,255,0.45) 0%, transparent 70%)",
+                "radial-gradient(60% 100% at 50% 0%, rgba(255,255,255,0.12) 0%, transparent 70%)",
             }}
           />
 
-          {/* animated shine sweep */}
+          {/* subtle shine sweep — quick, faint, infrequent */}
           <motion.div
-            className="pointer-events-none absolute inset-y-0 w-1/3"
+            className="pointer-events-none absolute inset-y-0 w-1/4"
             style={{
               background:
-                "linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.55) 45%, transparent 90%)",
-              mixBlendMode: "overlay",
+                "linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.14) 45%, transparent 90%)",
             }}
-            initial={{ left: "-40%" }}
-            animate={{ left: "140%" }}
+            initial={{ left: "-30%" }}
+            animate={{ left: "130%" }}
             transition={{
-              duration: 3.2,
+              duration: 2.2,
               repeat: Infinity,
-              repeatDelay: 3.5,
+              repeatDelay: 6,
               ease: "easeInOut",
             }}
           />
@@ -210,13 +207,12 @@ export default function Navbar() {
             <motion.button
               whileTap={{ scale: 0.87 }}
               onClick={() => setOpen(!open)}
-              className="md:hidden cursor-pointer p-2 rounded-xl transition-all duration-300"
+              className="md:hidden cursor-pointer p-2 rounded-xl text-white transition-all duration-300"
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 100%)",
-                border: "1px solid rgba(255,255,255,0.6)",
-                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.5)",
-                color: "#1a1a1a",
+                  "linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%)",
+                border: "1px solid rgba(255,255,255,0.16)",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.2)",
               }}
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -250,10 +246,10 @@ export default function Navbar() {
               className="relative rounded-2xl overflow-hidden backdrop-blur-2xl backdrop-saturate-150"
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.16) 100%), rgba(255,255,255,0.3)",
-                border: "1px solid rgba(255,255,255,0.6)",
+                  "linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.03) 100%), rgba(8,8,8,0.82)",
+                border: "1px solid rgba(255,255,255,0.16)",
                 boxShadow:
-                  "0 24px 50px rgba(0,0,0,0.16), inset 0 1px 0 rgba(255,255,255,0.6)",
+                  "0 24px 60px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.16)",
               }}
             >
               {/* top sheen highlight */}
@@ -261,7 +257,7 @@ export default function Navbar() {
                 className="pointer-events-none absolute inset-x-0 top-0 h-1/3"
                 style={{
                   background:
-                    "radial-gradient(70% 100% at 50% 0%, rgba(255,255,255,0.5) 0%, transparent 70%)",
+                    "radial-gradient(70% 100% at 50% 0%, rgba(255,255,255,0.12) 0%, transparent 70%)",
                 }}
               />
 
@@ -275,8 +271,8 @@ export default function Navbar() {
                     className="list-none"
                   >
                     <Link to={link.path} onClick={() => setOpen(false)}>
-                      <div className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-black/60 hover:text-black hover:bg-white/50 hover:border hover:border-white/70 transition-all duration-200">
-                        <span className="w-1 h-1 rounded-full bg-black/30 shrink-0" />
+                      <div className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-white/60 hover:text-white hover:bg-white/8 hover:border hover:border-[#434343]/60 transition-all duration-200">
+                        <span className="w-1 h-1 rounded-full bg-white/30 shrink-0" />
                         {link.name}
                       </div>
                     </Link>
@@ -287,7 +283,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.25, duration: 0.22 }}
-                  className="list-none mt-1 pt-3 border-t border-black/10"
+                  className="list-none mt-1 pt-3 border-t border-white/10"
                 >
                   <a href={PHONE_HREF} onClick={() => setOpen(false)}>
                     <button
@@ -296,7 +292,7 @@ export default function Navbar() {
                         background: ACCENT_GRADIENT,
                         border: `1px solid ${ACCENT}`,
                         boxShadow:
-                          "0 6px 16px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.3)",
+                          "0 6px 18px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.25)",
                       }}
                     >
                       <FaPhoneAlt size={13} />
