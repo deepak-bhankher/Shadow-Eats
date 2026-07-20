@@ -35,30 +35,21 @@ function NavItem({ label, path }) {
       onMouseLeave={() => setHovered(false)}
       className="relative px-2 lg:px-4 py-2 cursor-pointer"
     >
-      <AnimatePresence>
-        {active && (
-          <motion.span
-            initial={{ opacity: 0, scale: 0.88 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.88 }}
-            transition={{ duration: 0.15 }}
-            className="absolute inset-0 rounded-lg"
-            style={{
-              background: ACCENT_GRADIENT,
-              border: `1px solid ${ACCENT}`,
-              boxShadow:
-                "inset 0 1px 0 rgba(60,60,60,0.35), 0 4px 12px rgba(0,0,0,0.6)",
-            }}
-          />
-        )}
-      </AnimatePresence>
       <motion.span
-        animate={{ color: "#e8e8e8" }}
+        animate={{ color: active ? "#ffffff" : "#9a9a9a" }}
         transition={{ duration: 0.2 }}
         className="relative text-[13px] lg:text-sm font-medium tracking-wide whitespace-nowrap"
       >
         {label}
       </motion.span>
+
+      <motion.span
+        initial={false}
+        animate={{ scaleX: active ? 1 : 0, opacity: active ? 1 : 0 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        className="absolute left-1/2 bottom-1 -translate-x-1/2 h-[1.5px] w-[60%] origin-center"
+        style={{ background: "#ffffff" }}
+      />
     </div>
   );
 }
@@ -159,7 +150,7 @@ export default function Navbar() {
                 className="flex items-center gap-2 cursor-pointer"
               >
                 <img
-                  src="shadowLogo.png"
+                  src="/shadowLogo.png"
                   alt="Shadow Eats"
                   className="h-8 sm:h-9 md:h-10 w-auto object-contain"
                 />
